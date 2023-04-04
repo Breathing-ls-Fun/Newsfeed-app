@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'NFApp',
 ]
 
 MIDDLEWARE = [
@@ -79,8 +80,8 @@ DATABASES = {
         'NAME': 'newsfeed',
         'USER': 'admin',
         'PASSWORD': 'nfadmin123',
-        'HOST': 'newsfeed-app.crjwqpt0y7tj.us-east-2.rds.amazonaws.com',
-        'PORT': 3306
+        'HOST': 'newsfeedaws.cdhkzb6ll5ro.us-east-1.rds.amazonaws.com',
+        'PORT': 3306,
     }
 }
 
