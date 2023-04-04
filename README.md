@@ -28,3 +28,9 @@ Run server to make usre it is running correctly
 
 **Note: if you open the repo using vs code, just open the vscode terminal and
   follow the steps above. 
+
+
+Database:
+
+username: admin
+password: nfadmin123
