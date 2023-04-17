@@ -21,9 +21,6 @@ else
     touch logs/error.log logs/access.log
 fi
 
-echo "Collecting static files" 
-python3 manage.py collectstatic
-
 
 sudo chmod -R 777 logs
 echo "envsetup finished"

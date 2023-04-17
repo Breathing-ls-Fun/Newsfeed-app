@@ -6,7 +6,7 @@ cd /var/lib/jenkins/workspace/nf-app
 
 python3 manage.py makemigrations
 python3 manage.py migrate
-# python3 manage.py collectstatic -- no-input
+python3 manage.py collectstatic -- no-input
 
 echo "Migrations done"
 
@@ -27,7 +27,7 @@ sudo systemctl enable gunicorn
 
 echo "Gunicorn has been enabled."
 
-# sudo systemctl restart gunicorn
+sudo systemctl restart gunicorn
 
 
 sudo systemctl status gunicorn
