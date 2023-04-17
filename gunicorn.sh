@@ -2,7 +2,7 @@
 
 source env/bin/activate
 
-cd /var/lib/jenkins/workspace/nf-app-45600
+cd /var/lib/jenkins/workspace/nf-app-45600_test
 
 python3 manage.py makemigrations
 python3 manage.py migrate
@@ -10,7 +10,7 @@ python3 manage.py migrate
 
 echo "Migrations done"
 
-# cd /var/lib/jenkins/workspace/nf-app-45600
+# cd /var/lib/jenkins/workspace/nf-app-45600_test
 
 sudo cp -rf gunicorn.socket /etc/systemd/system/
 sudo cp -rf gunicorn.service /etc/systemd/system/
