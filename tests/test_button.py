@@ -6,4 +6,6 @@ class ButtonTestCase(TestCase):
         url = reverse('home')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, '<a href="/my/link/">My Button Text</a>')
+        self.assertContains(response, '<button type="submit">Sign Up</button>')
+    
+    
