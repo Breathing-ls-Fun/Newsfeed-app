@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo cp -rf app.conf /etc/nginx/sites-available/app-456
-chmod 755 /var/lib/jenkins/workspace/nf-app-45600_test
+chmod 755 /var/lib/jenkins/workspace/nf-app
 
 sudo ln -s /etc/nginx/sites-available/app-456 /etc/nginx/sites-enabled
 sudo nginx -t

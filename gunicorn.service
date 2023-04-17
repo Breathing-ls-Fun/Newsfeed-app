@@ -6,11 +6,11 @@ After=network.target
 [Service]
 User=root
 Group=www-data
-WorkingDirectory=/var/lib/jenkins/workspace/nf-app-45600_test
-ExecStart=/var/lib/jenkins/workspace/nf-app-45600_test/env/bin/gunicorn \
+WorkingDirectory=/var/lib/jenkins/workspace/nf-app
+ExecStart=/var/lib/jenkins/workspace/nf-app/env/bin/gunicorn \
          --workers 3 \
          --log-level debug \
-         --error-logfile /var/lib/jenkins/workspace/nf-app-45600_test/error.log \
+         --error-logfile /var/lib/jenkins/workspace/nf-app/error.log \
          --bind unix:/run/gunicorn.sock NewsFeedApp.wsgi:application
 
 [Install]
