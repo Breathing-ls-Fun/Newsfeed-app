@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NewsFeed</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-LMFxM7bdzDvH1/zEFL1f3BnFhLsfuvQcLQ6XfvU3qg0WW0ZT6QymTmWyRkLgJw6F/m0vIbnli7XpupAHPttBzA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+		<style>
+			/* Style for the navbar */
+			nav {
+				box-sizing: border-box;
+				position: absolute;
+				width: 1445px;
+				height: 57px;
+				left: -1px;
+				top: -2px;
+				background: #FFFDFD;
+				border: 1px solid #000000;
+			}
+
+			nav .genres {
+				display: flex;
+				flex-direction: row;
+				align-items: flex-end;
+				padding: 0px;
+				gap: 91px;
+
+				position: absolute;
+				width: 455px;
+				height: 55px;
+				left: 0px;
+				top: -1px;
+
+			}
+			
+			#sports {
+				position: absolute;
+				width: 54px;
+				height: 60px;
+				left: 21px;
+				top: -3px;
+
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 30px;
+				/* or 188% */
+
+				display: flex;
+				align-items: center;
+
+				color: #000000;
+			}
+
+			#tech {
+				position: absolute;
+				width: 45px;
+				height: 60px;
+				left: 116px;
+				top: -3px;
+
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 30px;
+				/* or 188% */
+
+				display: flex;
+				align-items: center;
+
+				color: #000000;
+
+
+			}
+
+			#art {
+				position: absolute;
+				width: 31px;
+				height: 60px;
+				left: 216px;
+				top: -3px;
+
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 30px;
+				/* or 188% */
+
+				display: flex;
+				align-items: center;
+
+				color: #000000;
+
+			}
+
+			#politics {
+				position: absolute;
+				width: 61px;
+				height: 60px;
+				left: 291px;
+				top: -3px;
+
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 30px;
+				/* or 188% */
+
+				display: flex;
+				align-items: center;
+				color: #000000;
+			}
+			
+			#food {
+				position: absolute;
+				width: 42px;
+				height: 60px;
+				left: 389px;
+				top: -3px;
+
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 30px;
+				/* or 188% */
+
+				display: flex;
+				align-items: center;
+
+				color: #000000;
+
+			}
+
+			
+
+			nav .logo {
+				position: absolute;
+				width: 147px;
+				height: 28px;
+				left: 646px;
+				top: 13px;
+	
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 28px;
+				line-height: 18px;
+				/* or 64% */
+	
+				display: flex;
+				align-items: center;
+	
+				color: #000000;
+			}
+
+			#search {
+				position: absolute;
+				width: 35px;
+				height: 45px;
+				left: 1194px;
+				top: 20px;
+			}
+
+			nav .sign-up {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				padding: 0px 12px;
+				gap: 6px;
+
+				position: absolute;
+				width: 84px;
+				height: 40px;
+				left: 1225px;
+				top: 7px;
+
+				/* Primary */
+
+				background: #074EE8;
+				border-radius: 4px;
+				
+			}
+
+			#sign-up-btn {
+				width: 84px;
+				height: 40px;
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 18px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #FFFFFF;
+				background-color: #074EE8;
+				border-radius: 4px;
+				flex: none;
+				order: 2;
+				margin-left: 6px;
+			}
+
+
+			nav .log-in {
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				padding: 0px 12px;
+				gap: 6px;
+				position: absolute;
+				width: 80px;
+				height: 40px;
+				left: 1350px;
+				top: 7px;
+				/* Primary */
+				background: #FFFFFF;
+
+				border: 2px solid #074EE8;
+				border-radius: 4px;
+			}
+
+			#log-in-btn {
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 18px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #074EE8;
+				
+				
+				flex: none;
+				order: 1;
+				
+			}
+
+			.weather-box {
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				padding: 30px 40px 40px;
+				gap: 10px;
+
+				width: 753px;
+				height: 202px;
+
+				border: 1px solid #000000;
+				border-radius: 5px;
+
+				/* Inside auto layout */
+
+				flex: none;
+				order: 0;
+				flex-grow: 0;
+				margin-top: 70px;
+				
+      		}
+			
+			.day {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-right: 10px;
+    		}
+			
+			.wi {
+        		font-size: 36px;
+    		}
+			
+			#forecast-font {
+				width: 673px;
+				height: 0px;
+
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 18px;
+				display: flex;
+				align-items: center;
+				color: #000000;
+				flex: none;
+				order: 0;
+				margin-left: -30px;
+				flex-grow: 0;
+			}
+
+			.temperature {
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				padding: 25px 200px 100px 0px;
+				margin-left: -35px; 
+				gap: 32px;
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 400;
+
+				width: 500px;
+				height: 35px;
+
+
+				/* Inside auto layout */
+
+				flex: none;
+				order: 2;
+				flex-grow: 0;
+			}
+
+			.today-temperature {
+				display: flex;
+				
+				align-items: center;
+				justify-content: center;
+				margin-top: 35px;
+			
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 400;
+
+				width: 500px;
+				height: 35px;
+
+
+				/* Inside auto layout */
+
+				flex: none;
+				order: 2;
+				flex-grow: 0;
+			}
+
+			.weather-icon {
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				padding: 0px;
+				gap: 10px;
+
+				width: 689px;
+				height: 70px;
+
+
+				/* Inside auto layout */
+
+				flex: none;
+				order: 1;
+				flex-grow: 0;
+			}
+			
+			#weather {
+				box-sizing: border-box;
+
+				/* Auto layout */
+
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				padding: 30px 40px 40px;
+				gap: 10px;
+
+				width: 753px;
+				height: 202px;
+
+				border: 1px;
+				border-radius: 5px;
+
+				/* Inside auto layout */
+
+				flex: none;
+				order: 0;
+				flex-grow: 0;
+			}
+
+			
+			.today-weatherbox {
+				box-sizing: border-box;
+
+				position: absolute;
+				width: 576px;
+				height: 274px;
+				left: 850px;
+				top: 70px;
+
+				background: #FFFFFF;
+				border: 1px solid #000000;
+				border-radius: 5px;
+			}
+
+			#first {
+				width: 50px;
+				height: 24px;
+
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 18px;
+				/* or 112% */
+
+				display: flex;
+				align-items: center;
+
+				color: #000000;
+
+
+				/* Inside auto layout */
+
+				flex: none;
+				order: 0;
+				flex-grow: 0;
+			}
+
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				margin-top: 125px;
+				
+			}
+
+			#article-title {
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 22px;
+				line-height: 18px;
+				/* or 64% */
+	
+	
+				color: #000000;
+
+			}
+
+			#article-author {
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+
+			}
+
+			#article-content {
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 290;
+				font-size: 14px;
+
+			}
+
+			.news-container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				margin-top: 90px;
+			}
+
+			.news-column {
+				width: 48%;
+				padding: 10px;
+				margin-bottom: 20px;
+				background-color: #f2f2f2;
+				border: 1px solid #ddd;
+				text-align: center;
+				border-radius: 5px;
+			}
+
+			@media screen and (max-width: 768px) {
+			.news-column {
+				width: 100%;
+			}
+			}
+
+
+	
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="genres">
+				<div id="sports">Sports</div>
+				<div id="tech">Tech</div>
+				<div id="art">Art</div>
+				<div id="politics">Politics</div>
+				<div id="food">Food</div>
+			</div>
+			<div class="logo">NewsFeed</div>
+			<a href="#"><i class="fa fa-search" id="search"></i></a>
+			<div class="log-in" id="log-in-btn">Log In</div>
+			<div class="sign-up" id="sign-up-btn">Sign Up</div>
+			
+		</nav>
+		<div class="weather-box">
+			<div id="weather">
+				<h2 id="forecast-font">7 Day Forecast - Location: New York, NY</h2>
+				<div class="weather-icon">
+
+				</div>
+				<div class="temperature">
+				  <p>80°F/45°F</p>
+				  <p>75°F/50°F</p>
+				  <p>82°F/47°F</p>
+				  <p>70°F/42°F</p>
+				  <p>75°F/44°F</p>
+				  <p>79°F/43°F</p>
+				  <p>81°F/46°F</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="today-weatherbox">
+			<div id="weather">
+				<h2 id="forecast-font">Today's Weather</h2>
+				<div class="weather-icon">
+					
+
+				</div>
+				<div class="today-temperature">
+				  <p>80°F/45°F</p>
+				  
+				</div>
+			</div>
+
+		</div>
+
+		<div class="news-container">
+			<div class="news-column">
+			  <div class="news-article">
+				<h3 id="article-title">World Cup 2022</h3>
+				<h5 id="article-author">By: John Doe</h5>
+				<p id="article-content">When Alexis Mac Allister returned to his day job, he was greeted by a standing ovation, an Argentine flag and a set of strategically placed cannons that showered him with blue, white and gold glitter. His Premier League team, Brighton, had even gone to the trouble of commissioning a scale-model replica of the World Cup trophy for him to lift. Few of Mac Allister’s teammates on the Argentina squad that became world champions three months ago experienced such a lavish welcome when they returned to their clubs, but most were treated to some sort of celebration, a heartfelt recognition of their achievement. Defender Lisandro Martínez was applauded onto the field at Manchester United. The reserve goalkeeper Franco Armani has received at least one commemorative jersey from his opponents. The midfielder Exequiel Palacios spent a portion of his first day back at Bayer Leverkusen signing autographs for his co-workers.</p>
+			  </div>
+			  <!-- <div class="news-article">
+				<h3>Article 2</h3>
+				<p>Article 2 content goes here</p>
+			  </div> -->
+			</div>
+			<div class="news-column">
+			  <div class="news-article">
+				<h3 id="article-title">Random Article</h3>
+				<h5 id="article-author">By: Jane Doe</h5>
+				<p id="article-content">Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+		
+	</body>
+</html>
