@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'test1',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -123,4 +124,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import os
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
