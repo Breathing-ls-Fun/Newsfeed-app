@@ -1,3 +1,6 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -110,45 +113,47 @@
 </head>
 
   <body>
-    <div class="container">
-      <div class="login-content">
-        <div class="logo">
-          <h1>NewsFeed</h1>
-        </div>
-
-        <div class="name-field">
+    <form method="POST" class="form-group">
+      {% csrf_token %}
+      <div class="container">
+        <div class="login-content">
+          <div class="logo">
+            <h1>NewsFeed</h1>
+          </div>
+          <div class="name-field">
+            <div class="input-container">
+              <label for="uname"><b>First Name</b></label>
+              <input type="text" name="uname" required>
+          </div>
           <div class="input-container">
-            <label for="uname"><b>First Name</b></label>
-            <input type="text" name="uname" required>
-        </div>
-        <div class="input-container">
-            <label for="uname"><b>Last Name</b></label>
-            <input type="text" name="uname" required>
-        </div>
-
-        </div>
-        <div class="input-container">
-            <label for="uname"><b>Email</b></label>
-            <input type="text" name="uname" required>
-        </div>
-        <div class="input-container">
-          <label for="psw"><b>Password</b></label>
-          <input type="password" name="psw" required>
-        </div>
-        <div class="input-container">
-            <label for="psw"><b> Confirm Password</b></label>
+              <label for="uname"><b>Last Name</b></label>
+              <input type="text" name="uname" required>
+          </div>
+  
+          </div>
+          <div class="input-container">
+              <label for="uname"><b>Email</b></label>
+              <input type="text" name="uname" required>
+          </div>
+          <div class="input-container">
+            <label for="psw"><b>Password</b></label>
             <input type="password" name="psw" required>
-        </div>
-
-        <div class="input-container">
-            <label for="uname"><b>Choose a username</b></label>
-            <input type="text" name="uname" required>
-        </div>
-
-        <div>
-          <button type="submit">Sign Up</button>
-        </div>
-      </div> 
-    </div>
+          </div>
+          <div class="input-container">
+              <label for="psw"><b> Confirm Password</b></label>
+              <input type="password" name="psw" required>
+          </div>
+  
+          <div class="input-container">
+              <label for="uname"><b>Choose a username</b></label>
+              <input type="text" name="uname" required>
+          </div>
+  
+          <div>
+            <button type="submit">Sign Up</button>
+          </div>
+        </div> 
+      </div>
+    </form>
   </body>
 </html>
