@@ -10,12 +10,13 @@
 			nav {
 				box-sizing: border-box;
 				position: absolute;
-				width: 1445px;
+				width: 100%;
 				height: 57px;
 				left: -1px;
 				top: -2px;
 				background: #FFFDFD;
 				border: 1px solid #000000;
+				
 			}
 
 			nav .genres {
@@ -23,8 +24,7 @@
 				flex-direction: row;
 				align-items: flex-end;
 				padding: 0px;
-				gap: 91px;
-
+				justify-content: space-between;
 				position: absolute;
 				width: 455px;
 				height: 55px;
@@ -32,7 +32,7 @@
 				top: -1px;
 
 			}
-			
+
 			#sports {
 				position: absolute;
 				width: 54px;
@@ -142,19 +142,16 @@
 				position: absolute;
 				width: 147px;
 				height: 28px;
-				left: 646px;
-				top: 13px;
-	
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
 				font-family: 'Inter';
 				font-style: normal;
 				font-weight: 700;
 				font-size: 28px;
 				line-height: 18px;
-				/* or 64% */
-	
 				display: flex;
 				align-items: center;
-	
 				color: #000000;
 			}
 
@@ -244,8 +241,8 @@
 				
 			}
 
-			.weather-box {
-				display: flex;
+			/* .weather-box {
+				display: inline-block;
 				flex-direction: row;
 				align-items: flex-start;
 				padding: 30px 40px 40px;
@@ -257,14 +254,14 @@
 				border: 1px solid #000000;
 				border-radius: 5px;
 
-				/* Inside auto layout */
+				
 
 				flex: none;
 				order: 0;
 				flex-grow: 0;
 				margin-top: 70px;
 				
-      		}
+      		} */
 			
 			.day {
 				display: flex;
@@ -383,9 +380,9 @@
 			}
 
 			
-			.today-weatherbox {
+			/* .today-weatherbox {
 				box-sizing: border-box;
-
+				display: inline-block;
 				position: absolute;
 				width: 576px;
 				height: 274px;
@@ -395,7 +392,27 @@
 				background: #FFFFFF;
 				border: 1px solid #000000;
 				border-radius: 5px;
+			} */
+
+			.weather-container {
+				display: flex; 
+				justify-content: space-between; 
+				align-items: center; 
 			}
+
+			.weather-box,
+			.today-weatherbox {
+				display: inline-block;
+				width: 850px; 
+				height: 300px; 
+				box-sizing: border-box; 
+				padding: 25px; 
+				border: 1px solid #000000;
+				border-radius: 5px;
+				margin-top: 80px;
+			}
+
+			
 
 			#first {
 				width: 50px;
@@ -423,9 +440,9 @@
 
 			.container {
 				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				margin-top: 125px;
+  				justify-content: center;
+  				align-items: center;
+  				height: 100vh;
 				
 			}
 
@@ -481,6 +498,13 @@
 			}
 			}
 
+			@media screen and (max-width: 768px) {
+			.weather-box,
+			.today-weatherbox {
+				display: block;
+				width: 100%;
+  			}
+			}
 
 	
 		</style>
@@ -496,42 +520,48 @@
 			</div>
 			<div class="logo">NewsFeed</div>
 			<a href="#"><i class="fa fa-search" id="search"></i></a>
-			<a href="login/"><button class="log-in" id="log-in-btn">Log In</button></a>
+			<a href="user/templates/login"><button class="log-in" id="log-in-btn">Log In</button></a>
 			<div class="sign-up" id="sign-up-btn">Sign Up</div>
 			
 		</nav>
-		<div class="weather-box">
-			<div id="weather">
-				<h2 id="forecast-font">7 Day Forecast - Location: New York, NY</h2>
-				<div class="weather-icon">
-
-				</div>
-				<div class="temperature">
-				  <p>80°F/45°F</p>
-				  <p>75°F/50°F</p>
-				  <p>82°F/47°F</p>
-				  <p>70°F/42°F</p>
-				  <p>75°F/44°F</p>
-				  <p>79°F/43°F</p>
-				  <p>81°F/46°F</p>
-				</div>
+		
+		<div class="weather-container">
+			
+				<div class="weather-box">
+					<div id="weather">
+						<h2 id="forecast-font">7 Day Forecast - Location: New York, NY</h2>
+						<div class="weather-icon">
+		
+						</div>
+						<div class="temperature">
+						  <p>80°F/45°F</p>
+						  <p>75°F/50°F</p>
+						  <p>82°F/47°F</p>
+						  <p>70°F/42°F</p>
+						  <p>75°F/44°F</p>
+						  <p>79°F/43°F</p>
+						  <p>81°F/46°F</p>
+						</div>
+					</div>
+				
 			</div>
-		</div>
-
-		<div class="today-weatherbox">
-			<div id="weather">
-				<h2 id="forecast-font">Today's Weather</h2>
-				<div class="weather-icon">
-					
-
+			
+				<div class="today-weatherbox">
+					<div id="weather">
+						<h2 id="forecast-font">Today's Weather</h2>
+					<div class="weather-icon">
+							
+		
+					</div>
+					<div class="today-temperature">
+						<p>80°F/45°F</p>  
+					</div>
+					</div>
 				</div>
-				<div class="today-temperature">
-				  <p>80°F/45°F</p>
-				  
-				</div>
-			</div>
-
+			
 		</div>
+		  
+		  
 
 		<div class="news-container">
 			<div class="news-column">
