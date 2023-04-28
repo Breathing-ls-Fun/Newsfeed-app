@@ -9,4 +9,4 @@ def home(request):
     return redirect('/user/dashboard')
 
 def registration(request):
-    return render(request, 'registration.html', {'title':'Sign Up'})
+    return render(request, 'register.html', {'title':'Sign Up'})
