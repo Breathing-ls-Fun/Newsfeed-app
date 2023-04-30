@@ -1,0 +1,159 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NewsFeed Sign Up</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="registration.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+    <style>
+        .container {
+            font-family: Inter, Helvetica, sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        
+            border-width: 1px;
+            border-radius: 8px;
+            border-style: solid;
+            border-color: black;
+        
+            height: 700px;
+            width: 800px;
+        }
+        
+        .logo {
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .signup-content {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .input-container {
+            padding: 10px 50px;
+            
+        }
+        
+        .name-field {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 10px;
+
+        }
+
+        .name-field input {
+            width: 290px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            
+        }
+        
+        input {
+            display: block;
+            width: 693px;
+            height : 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            color: white;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 12px;
+            gap: 6px;
+        
+            width: 700px;
+            height: 40px;
+        
+            /* Primary */
+        
+            background: #074EE8;
+            border-radius: 4px;
+            border-color: #074EE8;
+            font-size: 15px;
+            border-style: solid;
+        
+            /* Inside auto layout */
+        
+            flex: none;
+            order: 4;
+            flex-grow: 0;
+            margin-top: 30px;
+            margin-left: 50px;
+        }
+
+    </style>
+</head>
+
+  <body>
+    <form method="POST" class="form-group">
+      {% csrf_token %}
+      <div class="container">
+        <div class="login-content">
+          <div class="logo">
+            <h1>NewsFeed</h1>
+          </div>
+          <div class="name-field">
+            <div class="input-container">
+              <label for="uname"><b>First Name</b></label>
+              <input type="text" name="uname" required>
+          </div>
+          <div class="input-container">
+              <label for="uname"><b>Last Name</b></label>
+              <input type="text" name="uname" required>
+          </div>
+  
+          </div>
+          <div class="input-container">
+              <label for="uname"><b>Email</b></label>
+              <input type="text" name="uname" required>
+          </div>
+          <div class="input-container">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" name="psw" required>
+          </div>
+          <div class="input-container">
+              <label for="psw"><b> Confirm Password</b></label>
+              <input type="password" name="psw" required>
+          </div>
+  
+          <div class="input-container">
+              <label for="uname"><b>Choose a username</b></label>
+              <input type="text" name="uname" required>
+          </div>
+  
+          <div>
+            <button type="submit">Sign Up</button>
+          </div>
+        </div> 
+      </div>
+    </form>
+  </body>
+</html>
