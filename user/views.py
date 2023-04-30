@@ -19,7 +19,7 @@ def login(request):
         else:
             return render(request, "user/login.html", {'error_message': 'Invalid login'})
     else:
-        return render(request, "../user/templates/login.html")
+        return render(request, "user/login.html")
 
 def registration(request):
     return render(request, 'registration.html', {'title':'Sign Up'})
@@ -32,5 +32,4 @@ def logout(request):
     return redirect('/')
 
 def preferences(request):
-    if not request.user.is_authenticated:
-        return redirect('user/login')
+    return render(request, "user/preferences.html")
