@@ -115,7 +115,7 @@
 				color: #000000;
 			}
 			
-			#food {
+			#preferences {
 				position: absolute;
 				width: 42px;
 				height: 60px;
@@ -240,6 +240,28 @@
 				order: 1;
 				
 			}
+
+			/* .weather-box {
+				display: inline-block;
+				flex-direction: row;
+				align-items: flex-start;
+				padding: 30px 40px 40px;
+				gap: 10px;
+
+				width: 753px;
+				height: 202px;
+
+				border: 1px solid #000000;
+				border-radius: 5px;
+
+				
+
+				flex: none;
+				order: 0;
+				flex-grow: 0;
+				margin-top: 70px;
+				
+      		} */
 			
 			.day {
 				display: flex;
@@ -249,7 +271,9 @@
 				margin-right: 10px;
     		}
 			
-			
+			.wi {
+        		font-size: 36px;
+    		}
 			
 			#forecast-font {
 				width: 673px;
@@ -414,6 +438,14 @@
 				flex-grow: 0;
 			}
 
+			.container {
+				display: flex;
+  				justify-content: center;
+  				align-items: center;
+  				height: 100vh;
+				
+			}
+
 			#article-title {
 				font-family: 'Inter';
 				font-style: normal;
@@ -484,12 +516,13 @@
 				<div id="tech">Tech</div>
 				<div id="art">Art</div>
 				<div id="politics">Politics</div>
-				<div id="food">Food</div>
+				<a href="user/preferences" id="preferences">Preferences</a>
 			</div>
 			<div class="logo">NewsFeed</div>
 			<a href="#"><i class="fa fa-search" id="search"></i></a>
-			<a href="user/templates/login"><button class="log-in" id="log-in-btn">Log In</button></a>
-			<div class="sign-up" id="sign-up-btn">Sign Up</div>
+			<a href="user/login"><div class="log-in" id="log-in-btn">Log In</div></a>
+			<a href="user/registration"><div class="sign-up" id="sign-up-btn">Sign Up</div></a>
+			
 			
 		</nav>
 		

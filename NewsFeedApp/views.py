@@ -7,7 +7,7 @@ def home(request):
     if not request.user.is_authenticated:
         return render(request, 'home.html', {})
 
-    return redirect('/user/dashboard')
+    return redirect('/user/personalizedHome')
     
 
 
