@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>NewsFeed</title>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NewsFeed</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-LMFxM7bdzDvH1/zEFL1f3BnFhLsfuvQcLQ6XfvU3qg0WW0ZT6QymTmWyRkLgJw6F/m0vIbnli7XpupAHPttBzA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+		
 		<style>
 			/* Style for the navbar */
 			nav {
@@ -153,6 +161,11 @@
 				display: flex;
 				align-items: center;
 				color: #000000;
+			}
+
+			.nav-right {
+				float: right;
+				margin-right: 5px;
 			}
 
 			#search {
@@ -518,12 +531,14 @@
 				<div id="politics">Politics</div>
 				<a href="user/preferences" id="preferences">Preferences</a>
 			</div>
+
 			<a href="#"><div class="logo">NewsFeed</div></a>
 			<a href="user/search"><i class="fa fa-search" id="search"></i></a>
 			<a href="user/login"><div class="log-in" id="log-in-btn">Log In</div></a>
 			<a href="user/registration"><div class="sign-up" id="sign-up-btn">Sign Up</div></a>
 			
 			
+
 		</nav>
 		
 		<div class="weather-container">
