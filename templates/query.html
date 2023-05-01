@@ -11,7 +11,7 @@
 			nav {
 				box-sizing: border-box;
 				position: absolute;
-				width: 1445px;
+				width: 100%;
 				height: 57px;
 				left: -1px;
 				top: -2px;
@@ -143,19 +143,16 @@
 				position: absolute;
 				width: 147px;
 				height: 28px;
-				left: 646px;
-				top: 13px;
-	
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
 				font-family: 'Inter';
 				font-style: normal;
 				font-weight: 700;
 				font-size: 28px;
 				line-height: 18px;
-				/* or 64% */
-	
 				display: flex;
 				align-items: center;
-	
 				color: #000000;
 			}
 
@@ -275,6 +272,27 @@
 				order: 0;
 				flex-grow: 0;
 			}
+			
+			#preferences {
+				position: absolute;
+				width: 42px;
+				height: 60px;
+				left: 389px;
+				top: -3px;
+
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 30px;
+				/* or 188% */
+
+				display: flex;
+				align-items: center;
+
+				color: #000000;
+
+			}
 
 			.container {
 				display: flex;
@@ -340,12 +358,12 @@
 				<div id="tech">Tech</div>
 				<div id="art">Art</div>
 				<div id="politics">Politics</div>
-				<div id="food">Food</div>
+				<a href="../preferences/" id="preferences">Preferences</a>
 			</div>
-			<div class="logo">NewsFeed</div>
-			<a href="#"><i class="fa fa-search" id="search"></i></a>
-			<div class="log-in" id="log-in-btn">Log In</div>
-			<div class="sign-up" id="sign-up-btn">Sign Up</div>
+			<a href="/"><div class="logo">NewsFeed</div></a>
+			<a href="user/search"><i class="fa fa-search" id="search"></i></a>
+			<a href="../login"><div class="log-in" id="log-in-btn">Log In</div></a>
+			<a href="../registration"><div class="sign-up" id="sign-up-btn">Sign Up</div></a>
 			
 		</nav>
 		
