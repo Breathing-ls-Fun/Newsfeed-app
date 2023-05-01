@@ -143,19 +143,16 @@
 				position: absolute;
 				width: 147px;
 				height: 28px;
-				left: 646px;
-				top: 13px;
-	
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
 				font-family: 'Inter';
 				font-style: normal;
 				font-weight: 700;
 				font-size: 28px;
 				line-height: 18px;
-				/* or 64% */
-	
 				display: flex;
 				align-items: center;
-	
 				color: #000000;
 			}
 
@@ -355,10 +352,11 @@
 				<div id="politics">Politics</div>
 				<div id="food">Food</div>
 			</div>
-			<div class="logo">NewsFeed</div>
-			<a href="#"><i class="fa fa-search" id="search"></i></a>
-			<div class="log-in" id="log-in-btn">Log In</div>
-			<div class="sign-up" id="sign-up-btn">Sign Up</div>
+			<a href="/"><div class="logo">NewsFeed</div></a>
+			<a href="/user/search"><i class="fa fa-search" id="search"></i></a>
+			<a href="/user/login"><div class="log-in" id="log-in-btn">Log In</div></a>
+			<a href="/user/registration"><div class="sign-up" id="sign-up-btn">Sign Up</div></a>
+			
 			
 		</nav>
 		
