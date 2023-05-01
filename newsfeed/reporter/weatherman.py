@@ -25,7 +25,12 @@ class Weatherman:
         return self.current_weather
     
     def update_location(self, location):
+        prev = self.location
         self.location = location
+        try:
+            self.weather_manager.weather_at_place(self.location)
+        except:
+            self.location = prev
 
     def get_daily_forecast(self, img_size='2x'):
         try:
@@ -71,7 +76,6 @@ class Weatherman:
             status_icon[day.detailed_status] = day.weather_icon_url(img_size)
             i+= 1
 
-        print(len(self.daily_forecast))
-        return self.daily_forecast
+        return len(self.daily_forecast), self.daily_forecast
 
 
