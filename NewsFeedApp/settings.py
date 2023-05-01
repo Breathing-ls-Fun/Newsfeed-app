@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'NewsFeedApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nf_app_db',
+        'USER': 'admin',
+        'PASSWORD':'nfadmin123',
+        'HOST': 'nf-app-db.czladzj15lf6.us-east-1.rds.amazonaws.com',
+        'PORT': 3306,
     }
 }
 

@@ -1,7 +1,7 @@
 # Newsfeed-app
 Newsfeed app for CSC 45600
 
-Website URL: http://34.228.21.15/
+Website URL: http://54.144.214.122/
 
 Unofficial Readme
  
