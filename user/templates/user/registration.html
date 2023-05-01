@@ -28,12 +28,13 @@
             border-style: solid;
             border-color: black;
         
-            height: 700px;
+            height: 800px;
             width: 800px;
         }
         
         .logo {
             font-weight: 700;
+            font-size: 15px;
             display: flex;
             justify-content: center;
         }
@@ -109,6 +110,27 @@
             margin-left: 50px;
         }
 
+        .text {
+          color: #074EE8;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 315px;
+        
+          width: 700px;
+          height: 45px;
+        
+          margin-top: 30px;
+          cursor: pointer;
+          /* Inside auto layout */
+      }
+
+      .newuser {
+        margin-left: 275px;
+      }
+
+      
+
     </style>
 </head>
 
@@ -118,7 +140,7 @@
       <div class="container">
         <div class="login-content">
           <div class="logo">
-            <h1>NewsFeed</h1>
+            <a href="/"><h1>NewsFeed</h1></a>
           </div>
           <div class="name-field">
             <div class="input-container">
@@ -151,6 +173,9 @@
   
           <div>
             <button type="submit">Sign Up</button>
+          </div>
+          <div class="text">
+            <a class="newuser" href="/user/login">Already a registered user? Log In</a>
           </div>
         </div> 
       </div>
