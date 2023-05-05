@@ -13,7 +13,6 @@ class TestViews(TestCase):
         client = Client()
         response = client.get(reverse('registration'))
         self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'register.html')
 
-       
-  
+        self.assertTemplateUsed(response, 'registration.html')
+

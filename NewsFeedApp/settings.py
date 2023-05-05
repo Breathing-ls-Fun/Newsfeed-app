@@ -32,13 +32,18 @@ ALLOWED_HOSTS = ['34.228.21.15', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    #'user',
+    'user.apps.UserConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
     'test1',
+
     'crispy_forms',
 ]
 
@@ -57,7 +62,9 @@ ROOT_URLCONF = 'NewsFeedApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+
+        'DIRS': [BASE_DIR / 'templates'], 
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
