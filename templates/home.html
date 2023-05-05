@@ -15,267 +15,95 @@
 		
 		<style>
 			/* Style for the navbar */
-			nav {
-				box-sizing: border-box;
-				position: absolute;
-				width: 100%;
-				height: 57px;
-				left: -1px;
-				top: -2px;
-				background: #FFFDFD;
-				border: 1px solid #000000;
-				
-			}
+				body {
+					font-family: Inter, sans-serif;
+				}
 
-			nav .genres {
-				display: flex;
-				flex-direction: row;
-				align-items: flex-end;
-				padding: 0px;
-				justify-content: space-between;
-				position: absolute;
-				width: 455px;
-				height: 55px;
-				left: 0px;
-				top: -1px;
+				nav {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					border-bottom: 1px solid #000000;
+				}
 
-			}
+				a {
+					text-decoration: none;
+					color: black;
+				}
 
-			#sports {
-				position: absolute;
-				width: 54px;
-				height: 60px;
-				left: 21px;
-				top: -3px;
+				li {
+					list-style: none;
+					text-decoration: none;
+				}
 
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
+				.logo {
+					font-weight: 800;
+					font-size: 24px;
+					margin-left: -100px;
+				}
 
-				display: flex;
-				align-items: center;
+				.list {
+					margin-left: -25px;
+				}
 
-				color: #000000;
-			}
+				.categories {
+					display: inline;
+					padding: 10px;
+					border: 1px;
+					border-style: none;
+					border-color: black;
+					border-radius: 5px;
+				}
 
-			#tech {
-				position: absolute;
-				width: 45px;
-				height: 60px;
-				left: 116px;
-				top: -3px;
+				.right-section {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					flex: row;
+					gap: 1px;
+				}
 
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
+				#search {
+					height: 20px;
+					margin-right: 15px;
+					cursor: pointer;
+				}
 
-				display: flex;
-				align-items: center;
+				.signup {
+					display: flex;
+					gap: 6px;
+					width: 84px;
+					height: 40px;
+					left: 1249px;
+					top: 7px;
+					background: #074EE8;
+					border-radius: 4px;
+					border-style: solid;
+					border-color: #074EE8;
+					color: white;
+					cursor: pointer;
 
-				color: #000000;
+					justify-content: center;
+					align-items: center;
+				}
 
+				.login {
+					display: flex;
+					width: 71px;
+					height: 40px;
+					left: 1347px;
+					top: 7px;
+					background: #FFFFFF;
+					border: 2px solid #074EE8;
+					border-radius: 4px;
+					color: #074EE8;
+					margin-right: 10px;
+					cursor: pointer;
 
-			}
+					justify-content: center;
+					align-items: center;
+				}
 
-			#art {
-				position: absolute;
-				width: 31px;
-				height: 60px;
-				left: 216px;
-				top: -3px;
-
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
-
-				display: flex;
-				align-items: center;
-
-				color: #000000;
-
-			}
-
-			#politics {
-				position: absolute;
-				width: 61px;
-				height: 60px;
-				left: 291px;
-				top: -3px;
-
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
-
-				display: flex;
-				align-items: center;
-				color: #000000;
-			}
-			
-			#preferences {
-				position: absolute;
-				width: 42px;
-				height: 60px;
-				left: 389px;
-				top: -3px;
-
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
-
-				display: flex;
-				align-items: center;
-
-				color: #000000;
-
-			}
-
-			
-
-			nav .logo {
-				position: absolute;
-				width: 147px;
-				height: 28px;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 28px;
-				line-height: 18px;
-				display: flex;
-				align-items: center;
-				color: #000000;
-			}
-
-			.nav-right {
-				float: right;
-				margin-right: 5px;
-			}
-
-			#search {
-				position: absolute;
-				width: 35px;
-				height: 45px;
-				left: 1194px;
-				top: 20px;
-			}
-
-			nav .sign-up {
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				padding: 0px 12px;
-				gap: 6px;
-
-				position: absolute;
-				width: 84px;
-				height: 40px;
-				left: 1225px;
-				top: 7px;
-
-				/* Primary */
-
-				background: #074EE8;
-				border-radius: 4px;
-				
-			}
-
-			#sign-up-btn {
-				width: 84px;
-				height: 40px;
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 500;
-				font-size: 16px;
-				line-height: 18px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: #FFFFFF;
-				background-color: #074EE8;
-				border-radius: 4px;
-				flex: none;
-				order: 2;
-				margin-left: 6px;
-			}
-
-
-			nav .log-in {
-				box-sizing: border-box;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				padding: 0px 12px;
-				gap: 6px;
-				position: absolute;
-				width: 80px;
-				height: 40px;
-				left: 1350px;
-				top: 7px;
-				/* Primary */
-				background: #FFFFFF;
-
-				border: 2px solid #074EE8;
-				border-radius: 4px;
-			}
-
-			#log-in-btn {
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 500;
-				font-size: 16px;
-				line-height: 18px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: #074EE8;
-				
-				
-				flex: none;
-				order: 1;
-				
-			}
-
-			/* .weather-box {
-				display: inline-block;
-				flex-direction: row;
-				align-items: flex-start;
-				padding: 30px 40px 40px;
-				gap: 10px;
-
-				width: 753px;
-				height: 202px;
-
-				border: 1px solid #000000;
-				border-radius: 5px;
-
-				
-
-				flex: none;
-				order: 0;
-				flex-grow: 0;
-				margin-top: 70px;
-				
-      		} */
-			
 			.day {
 				display: flex;
 				flex-direction: column;
@@ -523,24 +351,24 @@
 		</style>
 	</head>
 	<body>
-		<nav>
-			<div class="genres">
-				<div id="sports">Sports</div>
-				<div id="tech">Tech</div>
-				<div id="art">Art</div>
-				<div id="politics">Politics</div>
-				<a href="user/preferences" id="preferences">Preferences</a>
-			</div>
+      <nav>
+        <div>
+          <ul class="list">
+            <li class="categories"><a href="#">Sports</a></li>
+            <li class="categories"><a href="#">Tech</a></li>
+            <li class="categories"><a href="#">Art</a></li>
+            <li class="categories"><a href="#">Finance</a></li>
+            <li class="categories"><a href="#">Politics</a></li>
+          </ul>
+        </div>
+        <div class="logo">NewsFeed</div>
+        <div class="right-section">
+          <a href="user/search"><i class="fa fa-search" id="search"></i></a>
+          <a href="user/login"><div class="login" id="log-in-btn">Log In</div></a>
+          <a href="user/registration"><div class="signup" id="sign-up-btn">Sign Up</div></a>
+        </div>
+      </nav>
 
-			<a href="#"><div class="logo">NewsFeed</div></a>
-			<a href="user/search"><i class="fa fa-search" id="search"></i></a>
-			<a href="user/login"><div class="log-in" id="log-in-btn">Log In</div></a>
-			<a href="user/registration"><div class="sign-up" id="sign-up-btn">Sign Up</div></a>
-			
-			
-
-		</nav>
-		
 		<div class="weather-container">
 			
 				<div class="weather-box">
