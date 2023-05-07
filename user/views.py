@@ -22,10 +22,10 @@ def login(request):
         return render(request, "user/login.html")
 
 def registration(request):
-    return render(request, 'registration.html', {'title':'Sign Up'})
+    return render(request, 'user/registration.html', {'title':'Sign Up'})
 
 def query(request):
-    return render(request,'query.html', {'title':'Search'})
+    return render(request,'user/query.html', {'title':'Search'})
 
 def logout(request):
     auth_logout(request)
