@@ -22,7 +22,7 @@ def login(request):
         return render(request, "user/login.html")
 
 def registration(request):
-    return render(request, 'registration.html', {'title':'Sign Up'})
+    return render(request, 'user/registration.html', {'title':'Sign Up'})
 
 def query(request):
     return render(request,'query.html', {'title':'Search'})
@@ -33,3 +33,6 @@ def logout(request):
 
 def preferences(request):
     return render(request, "user/preferences.html")
+
+def personal(request):
+    return render(request, "user/personal_home.html")
