@@ -47,8 +47,9 @@ def registration(request):
     else:
         return render(request, "user/registration.html")
 
+
 def query(request):
-    return render(request,'query.html', {'title':'Search'})
+    return render(request,'user/query.html', {'title':'Search'})
 
 def logout(request):
     auth.logout(request)
