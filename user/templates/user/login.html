@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html>
+  {% load crispy_forms_tags %}
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,33 +18,33 @@
   </head>
 
   <body>
-
-    <div class="container">
-      <form method="POST">
-        {% csrf_token %}
-        <div class="login-content">
-          <div class="logo">
-            <a href="/"><h1>NewsFeed</h1></a>
+    <div class="container"> 
+      <div class="login-content">
+        <div class="logo">
+          <a href="/"><h1>NewsFeed</h1></a>
+        </div>
+        <form action="{% url "login" %}" method="POST">
+          {% csrf_token %}
+          {% if msg %}
+          <div class="alert alert-danger">
+            <strong>{{ msg|escape }}</strong>
           </div>
+          {% endif %}
           <div class="input-container">
-            <label for="uname"><b>Username/Email</b></label>
-            <input type="text" name="uname" required>
+            <label for="uname"><b>Username</b></label>
+            <input type="text" name="username" required>
           </div>
           <div class="input-container">
             <label for="psw"><b>Password</b></label>
-            <input type="password" name="psw" required>
+            <input type="password" name="password" required>
           </div>
-          <div>
-            <button type="submit">Sign In</button>
-          </div>
-      </form> 
-      
-          <div class="text">
-            <a class="newuser" href="/user/registration">New user? Sign Up</a>
-            <a class="forgotpass">Forgot Password?</a>
-          </div>
-        </div> 
-      
+          
+          <button type="submit">Sign In</button>
+          <a class="text" href="/user/registration">New user? Sign Up</a>
+          
+   
+        </form>
+      </div> 
     </div>
   </body>
 </html> 
