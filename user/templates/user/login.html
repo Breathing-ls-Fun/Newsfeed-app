@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  {% load crispy_forms_tags %}
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +49,7 @@
       }
       
       input {
-        width: 693px;
+        width: 695px;
         height : 30px;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -60,9 +61,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding: 0px 12px;
         gap: 6px;
-      
         width: 700px;
         height: 40px;
       
@@ -79,20 +78,19 @@
         flex: none;
         order: 4;
         flex-grow: 0;
-      
-        margin-top: 10px;
+        margin-top: 20px;
+        margin: 0 auto;
       }
       
       .text {
         color: #074EE8;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
-        gap: 315px;
+        gap: 10px;
       
-        width: 700px;
-        height: 45px;
-      
+        
+        align-items: center;
         margin-top: 30px;
         cursor: pointer;
         /* Inside auto layout */
@@ -108,32 +106,43 @@
       
       .input-container {
         margin-left: 50px;
+        margin-bottom: 10px;
+      
+      }
+
+      input[name="password"] {
+        margin-bottom: 30px;
       }
     </style>
   </head>
 
   <body>
-    <div class="container">
-      
+    <div class="container"> 
       <div class="login-content">
         <div class="logo">
           <a href="/"><h1>NewsFeed</h1></a>
         </div>
-        <div class="input-container">
-          <label for="uname"><b>Username/Email</b></label>
-          <input type="text" name="uname" required>
-        </div>
-        <div class="input-container">
-          <label for="psw"><b>Password</b></label>
-          <input type="password" name="psw" required>
-        </div>
-        <div>
+        <form action="{% url "login" %}" method="POST">
+          {% csrf_token %}
+          {% if msg %}
+          <div class="alert alert-danger">
+            <strong>{{ msg|escape }}</strong>
+          </div>
+          {% endif %}
+          <div class="input-container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" name="username" required>
+          </div>
+          <div class="input-container">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" name="password" required>
+          </div>
+          
           <button type="submit">Sign In</button>
-        </div>
-        <div class="text">
-          <a class="newuser" href="/user/registration">New user? Sign Up</a>
-          <a class="forgotpass">Forgot Password?</a>
-        </div>
+          <a class="text" href="/user/registration">New user? Sign Up</a>
+          
+         
+        </form>
       </div> 
     </div>
   </body>

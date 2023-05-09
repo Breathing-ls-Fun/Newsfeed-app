@@ -60,7 +60,7 @@
 					justify-content: space-between;
 					align-items: center;
 					flex: row;
-					gap: 1px;
+					gap: 6px;
 				}
 
 				#search {
@@ -333,6 +333,13 @@
 				border-radius: 5px;
 			}
 
+			#nav-right {
+				float: right;
+				margin-right: 20px;
+				display: flex;
+				align-items: center;
+			}
+
 			@media screen and (max-width: 768px) {
 			.news-column {
 				width: 100%;
@@ -351,7 +358,7 @@
 		</style>
 	</head>
 	<body>
-      <nav>
+		<nav>
         <div>
           <ul class="list">
             <li class="categories"><a href="#">Sports</a></li>
@@ -359,16 +366,31 @@
             <li class="categories"><a href="#">Art</a></li>
             <li class="categories"><a href="#">Finance</a></li>
             <li class="categories"><a href="#">Politics</a></li>
+            {% if request.user.is_authenticated %}
+            <li class="categories"><a href="user/preferences">Preferences</a></li>
+            {% endif %}
           </ul>
         </div>
-        <div class="logo">NewsFeed</div>
-        <div class="right-section">
+			
+
+			<a href="#"><div class="logo">NewsFeed</div></a>
+      <div class="right-section">
           <a href="user/search"><i class="fa fa-search" id="search"></i></a>
+          {% if not request.user.is_authenticated %}
           <a href="user/login"><div class="login" id="log-in-btn">Log In</div></a>
           <a href="user/registration"><div class="signup" id="sign-up-btn">Sign Up</div></a>
-        </div>
-      </nav>
-
+          {% else %}
+          <div>
+					Hello, {{user.username}}
+				  </div>
+				  <a href="/user/logout" class="login" role="button">Log Out</a>
+        
+          {% endif %}
+          
+      </div>
+    
+		</nav>
+		
 		<div class="weather-container">
 			
 				<div class="weather-box">
