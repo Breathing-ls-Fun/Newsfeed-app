@@ -321,14 +321,13 @@
 
 			.news-container {
 				display: flex;
-				justify-content: space-between;
+				flex-wrap: wrap;
 				margin-top: 90px;
-				gap: 10px;
 			}
 
 			.news-column {
-				float: left;
-  			width: 33.33%;
+				flex-grow: 1;
+  			width: 25%;
 				padding: 10px;
 				margin-bottom: 20px;
 				background-color: #f2f2f2;
@@ -350,6 +349,7 @@
 				width: 100%;
   			}
 			}
+
 	
 		</style>
 	</head>
@@ -434,6 +434,13 @@
 				</div>
 			</div>
 
+			<div class="news-column">
+				<div class="news-article">
+					<h3 id="article-title">World Cup 2022</h3>
+					<h5 id="article-author">By: John Doe</h5>
+					<p id="article-content">When Alexis Mac Allister returned to his day job, he was greeted by a standing ovation, an Argentine flag and a set of strategically placed cannons that showered him with blue, white and gold glitter. His Premier League team, Brighton, had even gone to the trouble of commissioning a scale-model replica of the World Cup trophy for him to lift. Few of Mac Allister’s teammates on the Argentina squad that became world champions three months ago experienced such a lavish welcome when they returned to their clubs, but most were treated to some sort of celebration, a heartfelt recognition of their achievement. Defender Lisandro Martínez was applauded onto the field at Manchester United. The reserve goalkeeper Franco Armani has received at least one commemorative jersey from his opponents. The midfielder Exequiel Palacios spent a portion of his first day back at Bayer Leverkusen signing autographs for his co-workers.</p>
+				</div>
+			</div>
 		</div>
 
 	</body>
