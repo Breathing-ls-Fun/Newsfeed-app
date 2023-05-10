@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NewsFeed</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-LMFxM7bdzDvH1/zEFL1f3BnFhLsfuvQcLQ6XfvU3qg0WW0ZT6QymTmWyRkLgJw6F/m0vIbnli7XpupAHPttBzA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+		
+	
+	</head>
+	<body>
+		<nav>
+            <div>
+            <ul class="list">
+                <li class="categories"><a href="#">Sports</a></li>
+                <li class="categories"><a href="#">Tech</a></li>
+                <li class="categories"><a href="#">Art</a></li>
+                <li class="categories"><a href="#">Finance</a></li>
+                <li class="categories"><a href="#">Politics</a></li>
+                {% if request.user.is_authenticated %}
+                <li class="categories"><a href="/user/preferences">Preferences</a></li>
+                {% endif %}
+            </ul>
+            </div>
+			
+
+			<a href="/"><div class="logo">NewsFeed</div></a>
+            <div class="right-section">
+                <a href="/user/search"><i class="fa fa-search" id="search"></i></a>
+                {% if not request.user.is_authenticated %}
+                <a href="/user/login"><div class="login" id="log-in-btn">Log In</div></a>
+                <a href="/user/registration"><div class="signup" id="sign-up-btn">Sign Up</div></a>
+                {% else %}
+                <div>Hello, {{user.username}}</div>
+				<a href="/user/logout" class="login" role="button">Log Out</a>
+                {% endif %}
+          
+            </div>
+    
+		</nav>
+		<div id="content" , name="content" , style=" padding-top:20px">
+			{% block content %}
+			{% endblock %}
+		</div>
+		
+
+		
+	</body>
+</html>
