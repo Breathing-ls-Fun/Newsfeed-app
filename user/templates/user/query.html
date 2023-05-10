@@ -1,412 +1,48 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>NewsFeed</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<style>
-			/* Style for the navbar */
-			nav {
-				box-sizing: border-box;
-				position: absolute;
-				width: 100%;
-				height: 57px;
-				left: -1px;
-				top: -2px;
-				background: #FFFDFD;
-				border: 1px solid #000000;
-			}
+{% extends 'user/base.html' %}
+{% load static %}
 
-			nav .genres {
-				display: flex;
-				flex-direction: row;
-				align-items: flex-end;
-				padding: 0px;
-				gap: 91px;
+{% block content %}
 
-				position: absolute;
-				width: 455px;
-				height: 55px;
-				left: 0px;
-				top: -1px;
-
-			}
-			
-			#sports {
-				position: absolute;
-				width: 54px;
-				height: 60px;
-				left: 21px;
-				top: -3px;
-
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
-
-				display: flex;
-				align-items: center;
-
-				color: #000000;
-			}
-
-			#tech {
-				position: absolute;
-				width: 45px;
-				height: 60px;
-				left: 116px;
-				top: -3px;
-
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
-
-				display: flex;
-				align-items: center;
-
-				color: #000000;
-
-
-			}
-
-			#art {
-				position: absolute;
-				width: 31px;
-				height: 60px;
-				left: 215px;
-				top: -3px;
-
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
-
-				display: flex;
-				align-items: center;
-
-				color: #000000;
-
-			}
-
-			#politics {
-				position: absolute;
-				width: 61px;
-				height: 60px;
-				left: 291px;
-				top: -3px;
-
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
-
-				display: flex;
-				align-items: center;
-				color: #000000;
-			}
-			
-			#food {
-				position: absolute;
-				width: 42px;
-				height: 60px;
-				left: 389px;
-				top: -3px;
-
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
-
-				display: flex;
-				align-items: center;
-
-				color: #000000;
-
-			}
-
-			
-
-			nav .logo {
-				position: absolute;
-				width: 147px;
-				height: 28px;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 28px;
-				line-height: 18px;
-				display: flex;
-				align-items: center;
-				color: #000000;
-			}
-
-			#search {
-				position: absolute;
-				width: 35px;
-				height: 45px;
-				left: 1194px;
-				top: 20px;
-			}
-
-			nav .sign-up {
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				padding: 0px 12px;
-				gap: 6px;
-
-				position: absolute;
-				width: 84px;
-				height: 40px;
-				left: 1225px;
-				top: 7px;
-
-				/* Primary */
-
-				background: #074EE8;
-				border-radius: 4px;
-				
-			}
-
-			#sign-up-btn {
-				width: 84px;
-				height: 40px;
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 500;
-				font-size: 16px;
-				line-height: 18px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: #FFFFFF;
-				background-color: #074EE8;
-				border-radius: 4px;
-				flex: none;
-				order: 2;
-				margin-left: 6px;
-			}
-
-
-			nav .log-in {
-				box-sizing: border-box;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				padding: 0px 12px;
-				gap: 6px;
-				position: absolute;
-				width: 80px;
-				height: 40px;
-				left: 1350px;
-				top: 7px;
-				/* Primary */
-				background: #FFFFFF;
-
-				border: 2px solid #074EE8;
-				border-radius: 4px;
-			}
-
-			#log-in-btn {
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 500;
-				font-size: 16px;
-				line-height: 18px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: #074EE8;
-				
-				
-				flex: none;
-				order: 1;
-				
-			}
-
-            .name {
-                display: flex;
-                justify-content: center;
-                margin-top: 100px;
-                white-space: nowrap;
-                
-            }
-			#first {
-				width: 50px;
-				height: 24px;
-
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 400;
-				font-size: 16px;
-				line-height: 18px;
-				/* or 112% */
-
-				display: flex;
-				align-items: center;
-
-				color: #000000;
-
-
-				/* Inside auto layout */
-
-				flex: none;
-				order: 0;
-				flex-grow: 0;
-			}
-			
-			#preferences {
-				position: absolute;
-				width: 42px;
-				height: 60px;
-				left: 389px;
-				top: -3px;
-
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 16px;
-				line-height: 30px;
-				/* or 188% */
-
-				display: flex;
-				align-items: center;
-
-				color: #000000;
-
-			}
-
-			.container {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				margin-top: 100px;
-				
-			}
-
-			#news-heading {
-				width: 147px;
-				height: 28px;
-				left: 675px;
-				top: 380px;
+<title>NewsFeed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/query.css' %}">
 	
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 700;
-				font-size: 28px;
-				line-height: 18px;
-				/* or 64% */
-	
-				display: flex;
-                justify-content: center;
-				align-items: center;
-	
-				color: #000000;
-
-			}
-
-			#news-subheading {
-				font-family: 'Inter';
-				font-style: normal;
-				font-weight: 400;
-				font-size: 14px;
-
-			}
-
-			.pad-left{
-				padding-right: 100px;
-			}
-
-            .news-row {
-                display: flex;
-                justify-content: space-between;
-                gap: 200px;
-
-            }
-
-            .card {
-                border: 2px;
-                border-radius: 5px;
-                border-color: black;
-                border-style: solid;
-            }
-			
-		</style>
-	</head>
-	<body>
-		<nav>
-			<div class="genres">
-				<div id="sports">Sports</div>
-				<div id="tech">Tech</div>
-				<div id="art">Art</div>
-				<div id="politics">Politics</div>
-				<a href="user/preferences" id="preferences">Preferences</a>
+<div class="name">
+	<h2 id="news-heading">Search Query</h2>
+</div>
+<div class="container">
+	<div class="news-row">
+		<div class="col-md-4">
+			<div class="card" id="news-subheading">
+				<div class="card-body">
+					<h4 class="card-title">News 1</h4>
+					<p class="author-text">By Author McAuthorFace</p>
+					<p class="card-text"> Lorem ipsum dolor sit amet </p>
+				</div>
 			</div>
-			<a href="/"><div class="logo">NewsFeed</div></a>
-			<a href="/user/search"><i class="fa fa-search" id="search"></i></a>
-			<a href="/user/login"><div class="log-in" id="log-in-btn">Log In</div></a>
-			<a href="/user/registration"><div class="sign-up" id="sign-up-btn">Sign Up</div></a>
-			
-		</nav>
-		
-
-    
-        <main>
-            <div class="name">
-                <h2 id="news-heading">Search Query</h2>
-            </div>
-            <div class="container">
-                <div class="news-row">
-                    <div class="col-md-4">
-                        <div class="card" id="news-subheading">
-                            <div class="card-body">
-                                <h4 class="card-title">News 1</h4>
-                                <p class="author-text">By Author McAuthorFace</p>
-                                <p class="card-text"> Lorem ipsum dolor sit amet </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" id="news-subheading">
-                            <div class="card-body">
-                                <h4 class="card-title">News 2</h4>
-                                <p class="author-text">By Author McAuthorFace</p>
-                                <p class="card-text"> Lorem ipsum dolor sit amet </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" id="news-subheading">
-                            <div class="card-body">
-                                <h4 class="card-title">News 3</h4>
-                                <p class="author-text">By Author McAuthorFace</p>
-                                <p class="card-text"> Lorem ipsum dolor sit amet </p>
-                            </div>
-                        </div>
-                    </div>	  
-                </div>
-            </div>
-        </main>
-
-
-		
-	</body>
-</html>
+		</div>
+		<div class="col-md-4">
+			<div class="card" id="news-subheading">
+				<div class="card-body">
+					<h4 class="card-title">News 2</h4>
+					<p class="author-text">By Author McAuthorFace</p>
+					<p class="card-text"> Lorem ipsum dolor sit amet </p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card" id="news-subheading">
+				<div class="card-body">
+					<h4 class="card-title">News 3</h4>
+					<p class="author-text">By Author McAuthorFace</p>
+					<p class="card-text"> Lorem ipsum dolor sit amet </p>
+				</div>
+			</div>
+		</div>	  
+	</div>
+</div>
+{% endblock %}
+        
