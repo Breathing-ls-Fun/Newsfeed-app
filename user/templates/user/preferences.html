@@ -1,33 +1,33 @@
+{% extends 'user/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>NewsFeed</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="{% static 'css/preferences.css' %}">
-	</head>
-	<body>
+{% block content %}
+  <title>NewsFeed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/preferences.css' %}">
 
-		<nav>
-			<div>
-				<ul class="list">
-					<li class="categories"><a href="#">Sports</a></li>
-					<li class="categories"><a href="#">Tech</a></li>
-					<li class="categories"><a href="#">Art</a></li>
-					<li class="categories"><a href="#">Finance</a></li>
-					<li class="categories"><a href="#">Politics</a></li>
-				</ul>
-			</div>
-			<div class="logo">NewsFeed</div>
-			<div class="right-section">
-				<a href="user/search"><i class="fa fa-search" id="search"></i></a>
-				<a href="/"><button class="login" id="log-in-btn">Log Out</button></a>
-			</div>
-		</nav>
+
+  <div class="name">
+    <h4 id="preferences-heading">Preferences</h4>
+  </div>
+
+  <div class="preferences-form">
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" style="margin-right: 20px;">
+    <br>
+    <label for="category1">Category 1:</label>
+    <input type="text" id="category1" name="category1" style="margin-right: 20px;">
+    <br>
+    <label for="category2">Category 2:</label>
+    <input type="text" id="category2" name="category2" style="margin-right: 20px;">
+    <br>
+    <label for="category3">Category 3:</label>
+    <input type="text" id="category3" name="category3" style="margin-right: 20px;">
+  </div>
+{% endblock %}
 
     <main>
       <div class="name">
@@ -48,5 +48,4 @@
 			</div>   
     </main>
 		
-	</body>
-</html>
+	
