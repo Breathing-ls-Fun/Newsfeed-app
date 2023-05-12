@@ -11,17 +11,16 @@
   border-style: solid;
   border-color: black;
 
-  height: 700px;
+  height: 420px;
   width: 800px;
 }
 
 .logo {
   font-weight: 700;
-  display: flex;
-  justify-content: center;
+  font-size: 15px;
 }
 
-.signup-content {
+.login-content {
   margin-top: 25px;
   display: flex;
   flex-direction: column;
@@ -29,39 +28,18 @@
   align-items: center;
 }
 
-.input-container {
-  padding: 10px 50px;
-  
-}
-
-.name-field {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  gap: 10px;
-
-}
-
-.name-field input {
-  width: 290px;
-}
-
 label {
-  display: block;
   text-align: left;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 input {
-  display: block;
   width: 693px;
   height : 30px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
 button {
   color: white;
   cursor: pointer;
@@ -88,6 +66,33 @@ button {
   flex: none;
   order: 4;
   flex-grow: 0;
+
+  margin-top: 10px;
+}
+
+.text {
+  color: #074EE8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 315px;
+
+  width: 700px;
+  height: 45px;
+
   margin-top: 30px;
+  cursor: pointer;
+  /* Inside auto layout */
+}
+
+.newuser:hover{
+  text-decoration: underline;
+}
+
+.forgotpass:hover{
+  text-decoration: underline;
+}
+
+.input-container {
   margin-left: 50px;
 }
