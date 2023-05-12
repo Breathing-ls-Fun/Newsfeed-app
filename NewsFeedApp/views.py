@@ -3,10 +3,13 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
 from newsapi import NewsApiClient
+from newsfeed.reporter.reporter import Reporter
 
 def home(request):
-    newsapi = NewsApiClient(api_key='fcdda744f1d94e9199337e419a17be4a')
-    topnews = newsapi.get_top_headlines(language='en')
+    api_key = 'fcdda744f1d94e9199337e419a17be4a'
+    reporter = Reporter(api_key)
+    topnews = reporter.get_top_headlines()
+    
     latest = topnews['articles']
     title = []
     desc = []
