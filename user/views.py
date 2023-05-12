@@ -58,5 +58,3 @@ def logout(request):
 def preferences(request):
     return render(request, "user/preferences.html")
 
-def personal(request):
-    return render(request, "user/personal_home.html")
