@@ -40,6 +40,7 @@ input {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 button {
   color: white;
   cursor: pointer;
@@ -74,22 +75,14 @@ button {
   color: #074EE8;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   gap: 315px;
-
-  width: 700px;
-  height: 45px;
-
   margin-top: 30px;
   cursor: pointer;
   /* Inside auto layout */
 }
 
 .newuser:hover{
-  text-decoration: underline;
-}
-
-.forgotpass:hover{
   text-decoration: underline;
 }
 

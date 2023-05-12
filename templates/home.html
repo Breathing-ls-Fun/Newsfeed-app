@@ -3,6 +3,7 @@
 
 {% block content %}
 
+<head>
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>NewsFeed</title>
@@ -14,7 +15,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'css/home.css' %}">
-	
+</head>
+
 	<div class="weather-container">
 			<div class="weather-box">
 				<div id="weather">
@@ -35,15 +37,15 @@
 		</div>		  
 
 		<div class="news-container">
-
+			{% for title, description, url, author, date in all_news %}
 			<div class="news-column">
 			  <div class="news-article">
-					<h3 id="article-title">World Cup 2022</h3>
-					<h5 id="article-author">By: John Doe</h5>
-					<p id="article-content">When Alexis Mac Allister returned to his day job, he was greeted by a standing ovation, an Argentine flag and a set of strategically placed cannons that showered him with blue, white and gold glitter. His Premier League team, Brighton, had even gone to the trouble of commissioning a scale-model replica of the World Cup trophy for him to lift. Few of Mac Allister’s teammates on the Argentina squad that became world champions three months ago experienced such a lavish welcome when they returned to their clubs, but most were treated to some sort of celebration, a heartfelt recognition of their achievement. Defender Lisandro Martínez was applauded onto the field at Manchester United. The reserve goalkeeper Franco Armani has received at least one commemorative jersey from his opponents. The midfielder Exequiel Palacios spent a portion of his first day back at Bayer Leverkusen signing autographs for his co-workers.</p>
+					<h3 id="article-title">{{title}}</h3>
+					<h5 id="article-author">By: {{author}}</h5>
+					<p id="article-content">{{description}}</p>
 			  </div>
 			</div>
-
+			{% endfor %}
 			<div class="news-column">
 				<div class="news-article">
 					<h3 id="article-title">World Cup 2022</h3>
