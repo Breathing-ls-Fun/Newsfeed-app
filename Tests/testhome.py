@@ -22,6 +22,33 @@ class HomeTemplateTests(TestCase):
         self.assertContains(response, '<div id="food">')
         self.assertContains(response, '<div class="logo">')
 
+
+    def test_newsfeed_page_today_weatherbox(self):
+        response = self.client.get(reverse('newsfeed'))
+        self.assertContains(response, '<div class="today-weatherbox">')
+        self.assertContains(response, '<div id="weather">')
+        self.assertContains(response, '<h2 id="forecast-font">Today\'s Weather</h2>')
+        self.assertContains(response, '<div class="weather-icon">')
+        self.assertContains(response, '<div class="today-temperature">')
+        self.assertContains(response, '<p>80°F/45°F</p>')
+
+
+
+    def test_newsfeed_page_weatherbox(self):
+        response = self.client.get(reverse('newsfeed'))
+        self.assertContains(response, '<div class="weather-box">')
+        self.assertContains(response, '<div id="weather">')
+        self.assertContains(response, '<h2 id="forecast-font">7 Day Forecast - Location: New York, NY</h2>')
+        self.assertContains(response, '<div class="weather-icon">')
+        self.assertContains(response, '<div class="temperature">')
+        self.assertContains(response, '<p>80°F/45°F</p>')
+        self.assertContains(response, '<p>75°F/50°F</p>')
+        self.assertContains(response, '<p>82°F/47°F</p>')
+        self.assertContains(response, '<p>70°F/42°F</p>')
+        self.assertContains(response, '<p>75°F/44°F</p>')
+        self.assertContains(response, '<p>79°F/43°F</p>')
+        self.assertContains(response, '<p>81°F/46°F</p>')
+
         #self.assertContains(response, '<div id="search">')
         #self.assertContains(response, '<div class="sign-up">')
         #self.assertContains(response, '<button id="sign-up-btn">')
