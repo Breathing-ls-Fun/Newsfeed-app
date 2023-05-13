@@ -17,25 +17,6 @@
 	<link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 
-	<div class="weather-container">
-			<div class="weather-box">
-				<div id="weather">
-					<h2 id="forecast-font">7 Day Forecast - Location: New York, NY</h2>
-					<div class="weather-icon">
-	
-					</div>
-					<div class="temperature">
-						<p>80°F/45°F</p>
-						<p>75°F/50°F</p>
-						<p>82°F/47°F</p>
-						<p>70°F/42°F</p>
-						<p>75°F/44°F</p>
-						<p>79°F/43°F</p>
-						<p>81°F/46°F</p>
-					</div>
-				</div>
-		</div>		  
-
 		<div class="news-container">
 			{% for title, description, url, author, date in all_news %}
 			<div class="news-column">
@@ -54,20 +35,5 @@
 				</div>
 			</div>
 
-			<div class="news-column">
-				<div class="news-article">
-					<h3 id="article-title">World Cup 2022</h3>
-					<h5 id="article-author">By: John Doe</h5>
-					<p id="article-content">When Alexis Mac Allister returned to his day job, he was greeted by a standing ovation, an Argentine flag and a set of strategically placed cannons that showered him with blue, white and gold glitter. His Premier League team, Brighton, had even gone to the trouble of commissioning a scale-model replica of the World Cup trophy for him to lift. Few of Mac Allister’s teammates on the Argentina squad that became world champions three months ago experienced such a lavish welcome when they returned to their clubs, but most were treated to some sort of celebration, a heartfelt recognition of their achievement. Defender Lisandro Martínez was applauded onto the field at Manchester United. The reserve goalkeeper Franco Armani has received at least one commemorative jersey from his opponents. The midfielder Exequiel Palacios spent a portion of his first day back at Bayer Leverkusen signing autographs for his co-workers.</p>
-				</div>
-			</div>
-
-			<div class="news-column">
-				<div class="news-article">
-					<h3 id="article-title">World Cup 2022</h3>
-					<h5 id="article-author">By: John Doe</h5>
-					<p id="article-content">When Alexis Mac Allister returned to his day job, he was greeted by a standing ovation, an Argentine flag and a set of strategically placed cannons that showered him with blue, white and gold glitter. His Premier League team, Brighton, had even gone to the trouble of commissioning a scale-model replica of the World Cup trophy for him to lift. Few of Mac Allister’s teammates on the Argentina squad that became world champions three months ago experienced such a lavish welcome when they returned to their clubs, but most were treated to some sort of celebration, a heartfelt recognition of their achievement. Defender Lisandro Martínez was applauded onto the field at Manchester United. The reserve goalkeeper Franco Armani has received at least one commemorative jersey from his opponents. The midfielder Exequiel Palacios spent a portion of his first day back at Bayer Leverkusen signing autographs for his co-workers.</p>
-				</div>
-			</div>
-    </div>
+   		 </div>
 {% endblock %}

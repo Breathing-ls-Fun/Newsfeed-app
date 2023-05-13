@@ -9,43 +9,42 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{% static 'css/preferences.css' %}">
 
-
   <div class="name">
     <div id="preferences-heading">Preferences</div>
   </div>
-
-  <div class="preferences-form">
+  <form action="{% url 'preferences' %}" class="preferences-form" method="POST">
+    {% csrf_token %}
+  
     <label for="location">Location:</label>
     <input type="text" id="location" name="location" style="margin-right: 20px;">
     <br>
     <label for="category1">Category 1:</label>
-    <input type="text" id="category1" name="category1" style="margin-right: 20px;">
+    <select id="category1" name="category1" class="input-field" style="margin-right: 20px;">
+      <option value="" disabled selected>Select Category</option>
+      {% for category in user_categories %}
+        <option value="{{ category }}" {% if request.session.category1 == category %} selected {% endif %}>{{ category }}</option>
+      {% endfor %}
+    </select>
     <br>
     <label for="category2">Category 2:</label>
-    <input type="text" id="category2" name="category2" style="margin-right: 20px;">
+    <select id="category2" name="category2" class="input-field" style="margin-right: 20px;">
+      <option value="" disabled selected>Select Category</option>
+      {% for category in user_categories %}
+        {% if request.session.category1 != category %}
+          <option value="{{ category }}" {% if request.session.category2 == category %} selected {% endif %}>{{ category }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
     <br>
     <label for="category3">Category 3:</label>
-    <input type="text" id="category3" name="category3" style="margin-right: 20px;">
-  </div>
+    <select id="category3" name="category3" class="input-field" style="margin-right: 20px;">
+      <option value="" disabled selected>Select Category</option>
+      {% for category in user_categories %}
+        {% if request.session.category1 != category and request.session.category2 != category %}
+          <option value="{{ category }}" {% if request.session.category3 == category %} selected {% endif %}>{{ category }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+    <button type="submit">Update</button>
+  </form>
 {% endblock %}
-
-    <main>
-      <div class="name">
-        <h2 id="preferences-heading">Preferences</h2>
-      </div>
-      <div class="preferences-form">
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" style="margin-right: 20px;">
-        <br>
-        <label for="category1">Category 1:</label>
-        <input type="text" id="category1" name="category1" style="margin-right: 20px;">
-        <br>
-        <label for="category2">Category 2:</label>
-        <input type="text" id="category2" name="category2" style="margin-right: 20px;">
-        <br>
-        <label for="category3">Category 3:</label>
-        <input type="text" id="category3" name="category3" style="margin-right: 20px;">
-			</div>   
-    </main>
-		
-	
