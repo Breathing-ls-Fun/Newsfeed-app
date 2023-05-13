@@ -56,5 +56,24 @@ def logout(request):
     return redirect('/')
 
 def preferences(request):
-    return render(request, "user/preferences.html")
+    user_categories = ['Sports', 'Tech', 'Art', 'Finance', 'Politics']  # Example list of categories
 
+    if request.method == 'POST':
+        # Handle form submission and store preferences
+        location = request.POST.get('location')
+        category1 = request.POST.get('category1')
+        category2 = request.POST.get('category2')
+        category3 = request.POST.get('category3')
+
+        # Store the preferences in the user's session
+        request.session['location'] = location
+        request.session['category1'] = category1
+        request.session['category2'] = category2
+        request.session['category3'] = category3
+
+        return redirect('home')  # Redirect to the desired page after storing preferences
+    else:
+        context = {
+            'user_categories': user_categories
+        }
+        return render(request, 'user/preferences.html', context)
