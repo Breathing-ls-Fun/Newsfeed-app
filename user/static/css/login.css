@@ -35,26 +35,24 @@ label {
 }
 
 input {
-  width: 693px;
+  width: 695px;
   height : 30px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
+.sign-in{
+  display:flex;
+  justify-content: center;
+}
+
 button {
   color: white;
   cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 12px;
+  display: block;
   gap: 6px;
-
   width: 700px;
   height: 40px;
-
-  /* Primary */
 
   background: #074EE8;
   border-radius: 4px;
@@ -62,21 +60,18 @@ button {
   font-size: 15px;
   border-style: solid;
 
-  /* Inside auto layout */
-
-  flex: none;
-  order: 4;
-  flex-grow: 0;
-
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin: 0 auto;
 }
 
 .text {
   color: #074EE8;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 315px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
   margin-top: 30px;
   cursor: pointer;
   /* Inside auto layout */
@@ -86,6 +81,16 @@ button {
   text-decoration: underline;
 }
 
+.forgotpass:hover{
+  text-decoration: underline;
+}
+
 .input-container {
   margin-left: 50px;
+  margin-bottom: 10px;
+
+}
+
+input[name="password"] {
+  margin-bottom: 30px;
 }

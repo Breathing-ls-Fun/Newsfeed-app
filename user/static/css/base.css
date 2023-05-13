@@ -2,6 +2,12 @@ body {
     font-family: Inter, sans-serif;
 }
 
+img{
+    width:  900px;
+    height: 600px;
+    object-fit: cover;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -65,7 +71,6 @@ li {
     border-color: #074EE8;
     color: white;
     cursor: pointer;
-
     justify-content: center;
     align-items: center;
 }
@@ -82,7 +87,6 @@ li {
     color: #074EE8;
     margin-right: 10px;
     cursor: pointer;
-
     justify-content: center;
     align-items: center;
 }
