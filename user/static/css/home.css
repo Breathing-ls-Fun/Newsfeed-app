@@ -1,0 +1,152 @@
+.weather-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.current-weather-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    width: 300px;
+}
+
+#forecast-font {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.current-weather-icon {
+    width: 150px;
+    height: 150px;   
+}
+
+.forecast-weather-icon {
+    width: 150px;
+    height: 150px;
+}
+
+.current-weather-info {
+    margin-top: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.forecast-weather-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    width: 1200px;    
+    padding-left: 30px;
+}
+
+.week {
+    display: flex;
+    flex-direction: row;
+}
+
+.date {
+    padding-left: 30px;
+}
+.daily-forecast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+.news-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 25px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 60px;
+}
+
+.news-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #0c0b0b;
+    text-align: center;
+    border-radius: 5px;
+    
+}
+
+.news-article{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.article-image {
+    display: flex;
+    width: auto;
+    height: 12vw;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+#article-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    color: #000000;
+}
+
+#article-author {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#article-content {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 290;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+.news-column {
+    width: 100%;
+}
+}
+
+@media screen and (max-width: 768px) {
+.weather-box,
+.today-weatherbox {
+    display: block;
+    width: 100%;
+}
+}

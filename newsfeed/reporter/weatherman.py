@@ -1,4 +1,6 @@
 from pyowm import OWM
+from pyowm.utils import config
+from pyowm.utils import timestamps
 
 class Weatherman:
     current_weather = {}
@@ -76,6 +78,4 @@ class Weatherman:
             status_icon[day.detailed_status] = day.weather_icon_url(img_size)
             i+= 1
 
-        return len(self.daily_forecast), self.daily_forecast
-
-
+        return self.daily_forecast

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  {% load crispy_forms_tags %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NewsFeed Login </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  </head>
+
+  <body>
+    <div class="container"> 
+      <div class="login-content">
+        <div class="logo">
+          <a href="/"><h1>NewsFeed</h1></a>
+        </div>
+        <form action="{% url "login" %}" method="POST">
+          {% csrf_token %}
+          {% if msg %}
+          <div class="alert alert-danger">
+            <strong>{{ msg|escape }}</strong>
+          </div>
+          {% endif %}
+          <div class="input-container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" name="username" required>
+          </div>
+          <div class="input-container">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" name="password" required>
+          </div>
+          <div class="sign-in">
+            <button type="submit">Sign In</button>
+          </div>
+        </form>
+        <a class="text" href="/user/registration">New user? Sign Up</a>
+      </div> 
+    </div>
+  </body>
+</html> 

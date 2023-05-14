@@ -1,0 +1,24 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+	<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+	<div class="news-container">
+		{% for title, description, url, author, date, image in all_news %}
+			<div class="news-column">
+				<div class="news-article">
+					<img class="article-image" src= "{{ image }}">
+					<a href="{{ url }}">
+						<h3 id="article-title">{{title}}</h3>
+					</a>
+					<p id="article-content">{{description}}</p>
+				</div>
+			</div>
+			{% endfor %}
+	</div>
+
+{% endblock %}
