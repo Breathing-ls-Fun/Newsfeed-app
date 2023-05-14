@@ -7,3 +7,7 @@ newsapi-python==0.2.7
 pyowm==3.3.0
 django-crispy-forms
 mysqlclient
+pytest
+newsapi-python
+PyOWM
+coverage

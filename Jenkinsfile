@@ -25,5 +25,21 @@ pipeline{
                 '''
             }
         }
+        stage('Run Tests'){
+            steps {
+                sh '''
+                chmod +x auto_tests.sh
+                ./auto_tests.sh
+                '''
+            }
+        }
+        stage('Run API Tests'){
+            steps {
+                sh '''
+                chmod +x auto_api_tests.sh
+                ./auto_api_tests.sh
+                '''
+            }
+        }
     }
 }
