@@ -144,6 +144,16 @@ li {
     margin-top: 40px;
 }
 
+.preferences-form select {
+  width: 200px;
+  margin-bottom: 25px;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+}
+
 label {
     margin-bottom: 10px;
     font-style: normal;
@@ -191,3 +201,9 @@ button {
   margin-top: 30px;
   margin-left: 50px;
 }
+
+.disabled-option {
+  color: #888;
+  pointer-events: none;
+}
+
