@@ -11,12 +11,27 @@
 	<div class="weather-container">
 			<div class="weather-box">
 				<div id="weather">
-					<h2 id="forecast-font">7 Day Forecast - Location: New York, NY</h2>
+					<h2 id="forecast-font">Current Weather - Location: New York, NY</h2>
+					<div class="weather-icon">
+						<img src="{{weather_data.icon}}">
+					</div>
+					<div class="temperature">
+						<p>{{weather_data.hi}}°F/{{weather_data.lo}}°F</p>
+					</div>
+					<div class="status">
+						<p>{{weather_data.status}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="weather-box">
+				<div id="weather">
+					<h2 id="forecast-font">Weekly Forecast - Location: New York, NY</h2>
 					<div class="weather-icon">
 	
 					</div>
 					<div class="temperature">
-						<p>80°F/45°F</p>
+						<p>{{weather_data.hi}}°F/{{weather_data.lo}}°F</p>
 						<p>75°F/50°F</p>
 						<p>82°F/47°F</p>
 						<p>70°F/42°F</p>
@@ -25,7 +40,7 @@
 						<p>81°F/46°F</p>
 					</div>
 				</div>
-		</div>
+			</div>
 	</div>		  
 
 	<div class="news-container">
