@@ -5,3 +5,7 @@ sqlparse==0.4.3
 tzdata==2023.2
 django-crispy-forms
 mysqlclient
+pytest
+newsapi-python
+PyOWM
+coverage
