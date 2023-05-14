@@ -5,3 +5,5 @@ sqlparse==0.4.3
 tzdata==2023.2
 newsapi-python==0.2.7
 pyowm==3.3.0
+django-crispy-forms
+mysqlclient

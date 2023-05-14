@@ -79,4 +79,3 @@ class Weatherman:
             i+= 1
 
         return self.daily_forecast
-
