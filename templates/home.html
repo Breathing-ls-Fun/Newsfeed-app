@@ -13,32 +13,31 @@
 				<div id="weather">
 					<h2 id="forecast-font">Current Weather - Location: New York, NY</h2>
 					<div class="weather-icon">
-						<img src="{{weather_data.icon}}">
+						<img src="{{current_data.icon}}">
 					</div>
 					<div class="temperature">
-						<p>{{weather_data.hi}}°F/{{weather_data.lo}}°F</p>
+						<p>{{current_data.hi}}°F/{{current_data.lo}}°F</p>
 					</div>
 					<div class="status">
-						<p>{{weather_data.status}}</p>
+						<p>{{current_data.status}}</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="weather-box">
 				<div id="weather">
-					<h2 id="forecast-font">Weekly Forecast - Location: New York, NY</h2>
-					<div class="weather-icon">
-	
-					</div>
-					<div class="temperature">
-						<p>{{weather_data.hi}}°F/{{weather_data.lo}}°F</p>
-						<p>75°F/50°F</p>
-						<p>82°F/47°F</p>
-						<p>70°F/42°F</p>
-						<p>75°F/44°F</p>
-						<p>79°F/43°F</p>
-						<p>81°F/46°F</p>
-					</div>
+					<h2 id="forecast-font">5 Day Forecast - Location: New York, NY</h2>
+					{% for weekly_date, weekly_hi, weekly_lo, weekly_status, weekly_icon in weekly_data %}
+						<div class ="weather-icon">
+							<img src="{{weekly_icon}}">
+						</div>
+						<div class = "weather-info">
+							<p>{{ weekly_date }}</p>
+							<p>{{ weekly_hi }}°F</p>
+							<p>{{ weekly_lo }}°F</p>
+							<p>{{ weekly_status}}</p>
+						</div>
+					{% endfor %}
 				</div>
 			</div>
 	</div>		  
