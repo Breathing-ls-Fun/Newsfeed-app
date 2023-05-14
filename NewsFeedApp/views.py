@@ -13,24 +13,40 @@ def home(request):
     weather = Weatherman(weather_api_key, location = 'New York')
 
     topnews = reporter.get_top_headlines()
-    forecast = weather.get_current_weather()
+    current = weather.get_current_weather()
+    weekly_forecast = weather.get_daily_forecast()
 
-    print (topnews)
-    print (forecast)
+    print (current)
+    print (weekly_forecast)
 
-    hi = round(forecast['hi'])
-    lo = round(forecast['lo'])
-    current_temp = round(forecast['temp'])
-    status = forecast['status']
-    icon = forecast['icon_url']
+    hi = round(current['hi'])
+    lo = round(current['lo'])
+    current_temp = round(current['temp'])
+    status = current['status']
+    icon = current['icon_url']
 
-    weather_data = {
+    current_data = {
         "hi": hi,
         "lo": lo,
         "current": current_temp,
         "status": status,
         "icon": icon
     }
+
+    weekly_date = []
+    weekly_hi = []
+    weekly_lo = []
+    weekly_status = []
+    weekly_icon = []
+
+    for data in weekly_forecast:
+        weekly_date.append(str(data['date']))
+        weekly_hi.append(data['hi'])
+        weekly_lo.append(data['lo'])
+        weekly_status.append(data['status'])
+        weekly_icon.append(data['icon_url'])
+
+    weekly_data = zip(weekly_date, weekly_hi, weekly_lo, weekly_status, weekly_icon)
 
     latest = topnews['articles']
     title = []
@@ -53,7 +69,8 @@ def home(request):
     all_news = zip(title, desc, url, author, date, image)
 
     context = {
-        'weather_data': weather_data,
+        'current_data': current_data,
+        'weekly_data': weekly_data,
         'all_news': all_news,
     }
     
