@@ -41,8 +41,8 @@ def home(request):
 
     for data in weekly_forecast:
         weekly_date.append(str(data['date']))
-        weekly_hi.append(data['hi'])
-        weekly_lo.append(data['lo'])
+        weekly_hi.append(round(data['hi']))
+        weekly_lo.append(round(data['lo']))
         weekly_status.append(data['status'])
         weekly_icon.append(data['icon_url'])
 
