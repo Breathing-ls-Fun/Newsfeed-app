@@ -94,7 +94,8 @@
     border: 1px solid #0c0b0b;
     text-align: center;
     border-radius: 5px;
-    
+    overflow: hidden;
+
 }
 
 .news-article{
