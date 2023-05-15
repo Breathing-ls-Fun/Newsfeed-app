@@ -10,10 +10,11 @@ def home(request):
     news_api_key = '0c53dab69d7a40d8baa66aec200e8d8d'
     weather_api_key = '33acb338cf186037e1f0801d8945e21b'
     
-    if request.user.is_authenticated:
+
+    try:
         a = user_preferences.objects.get(user = request.user)
         weather_location = a.location
-    else:
+    except:
         weather_location = 'New York'
 
     reporter = Reporter(news_api_key)
