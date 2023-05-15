@@ -52,7 +52,7 @@ def registration(request):
 
 
 def query(request):
-    api_key = 'ac7ce57adbb5412bb3ee109895ec178a'
+    api_key = 'dc81eb154ec340a3a8f1914ad411a364'
     reporter = Reporter(api_key)
     
     query = request.GET['query']
