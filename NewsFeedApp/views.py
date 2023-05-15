@@ -4,20 +4,19 @@ from django.contrib.auth import authenticate, login as auth_login, logout as aut
 from django.contrib import messages
 from newsfeed.reporter.reporter import Reporter
 from newsfeed.reporter.weatherman import Weatherman
+from test1.models import user_preferences
 
 def home(request):
-    news_api_key = 'd1232f6fd9ad400da947bf5a59963e10'
+    news_api_key = '0c53dab69d7a40d8baa66aec200e8d8d'
     weather_api_key = '33acb338cf186037e1f0801d8945e21b'
 
+    a = user_preferences.objects.get(user = request.user)
     reporter = Reporter(news_api_key)
-    weather = Weatherman(weather_api_key, location = 'New York')
+    weather = Weatherman(weather_api_key, location = a.location)
 
     topnews = reporter.get_top_headlines()
     current = weather.get_current_weather()
     weekly_forecast = weather.get_daily_forecast()
-
-    print (current)
-    print (weekly_forecast)
 
     hi = round(current['hi'])
     lo = round(current['lo'])
@@ -26,6 +25,7 @@ def home(request):
     icon = current['icon_url']
 
     current_data = {
+        "location": a.location,
         "hi": hi,
         "lo": lo,
         "current": current_temp,
@@ -77,7 +77,7 @@ def home(request):
     return render(request, 'home.html', context)
 
 def category(request, category):
-    api_key = 'fcdda744f1d94e9199337e419a17be4a'
+    api_key = '0c53dab69d7a40d8baa66aec200e8d8d'
     reporter = Reporter(api_key)
     topnews = reporter.get_top_headlines(category)
 
