@@ -6,7 +6,7 @@ import time
 def reporter():
     print("\nTesting API Connection\n")
     start_time = time.process_time()
-    reporter = Reporter(key='')
+    reporter = Reporter(key='fcdda744f1d94e9199337e419a17be4a')
     print(time.process_time() - start_time, "seconds")
     return reporter
 
@@ -23,6 +23,69 @@ def test_get_top_headlines(reporter):
     print("\nTesting Get Top Headlines\n")
     start_time = time.process_time()
     test_top_headlines = reporter.get_top_headlines()
+    #print(test_top_headlines)
+    print(time.process_time() - start_time, "seconds")
+    assert(test_top_headlines.get('status') == 'ok')
+    assert(test_top_headlines.get('totalResults') > 0)
+
+def test_get_top_sport(reporter):
+    print("\nTesting Get Top Headlines\n")
+    start_time = time.process_time()
+    test_top_headlines = reporter.get_top_headlines('sports')
+    #print(test_top_headlines)
+    print(time.process_time() - start_time, "seconds")
+    assert(test_top_headlines.get('status') == 'ok')
+    assert(test_top_headlines.get('totalResults') > 0)
+
+def test_get_top_business(reporter):
+    print("\nTesting Get Top Headlines\n")
+    start_time = time.process_time()
+    test_top_headlines = reporter.get_top_headlines('business')
+    #print(test_top_headlines)
+    print(time.process_time() - start_time, "seconds")
+    assert(test_top_headlines.get('status') == 'ok')
+    assert(test_top_headlines.get('totalResults') > 0)
+
+def test_get_top_entertainment(reporter):
+    print("\nTesting Get Top Headlines\n")
+    start_time = time.process_time()
+    test_top_headlines = reporter.get_top_headlines('entertainment')
+    #print(test_top_headlines)
+    print(time.process_time() - start_time, "seconds")
+    assert(test_top_headlines.get('status') == 'ok')
+    assert(test_top_headlines.get('totalResults') > 0)
+
+def test_get_top_general(reporter):
+    print("\nTesting Get Top Headlines\n")
+    start_time = time.process_time()
+    test_top_headlines = reporter.get_top_headlines('general')
+    #print(test_top_headlines)
+    print(time.process_time() - start_time, "seconds")
+    assert(test_top_headlines.get('status') == 'ok')
+    assert(test_top_headlines.get('totalResults') > 0)
+
+def test_get_top_health(reporter):
+    print("\nTesting Get Top Headlines\n")
+    start_time = time.process_time()
+    test_top_headlines = reporter.get_top_headlines('health')
+    #print(test_top_headlines)
+    print(time.process_time() - start_time, "seconds")
+    assert(test_top_headlines.get('status') == 'ok')
+    assert(test_top_headlines.get('totalResults') > 0)
+
+def test_get_top_science(reporter):
+    print("\nTesting Get Top Headlines\n")
+    start_time = time.process_time()
+    test_top_headlines = reporter.get_top_headlines('science')
+    #print(test_top_headlines)
+    print(time.process_time() - start_time, "seconds")
+    assert(test_top_headlines.get('status') == 'ok')
+    assert(test_top_headlines.get('totalResults') > 0)
+
+def test_get_top_technology(reporter):
+    print("\nTesting Get Top Headlines\n")
+    start_time = time.process_time()
+    test_top_headlines = reporter.get_top_headlines('technology')
     #print(test_top_headlines)
     print(time.process_time() - start_time, "seconds")
     assert(test_top_headlines.get('status') == 'ok')
