@@ -9,10 +9,15 @@ from test1.models import user_preferences
 def home(request):
     news_api_key = '0c53dab69d7a40d8baa66aec200e8d8d'
     weather_api_key = '33acb338cf186037e1f0801d8945e21b'
+    
+    if request.user.is_authenticated:
+        a = user_preferences.objects.get(user = request.user)
+        weather_location = a.location
+    else:
+        weather_location = 'New York'
 
-    a = user_preferences.objects.get(user = request.user)
     reporter = Reporter(news_api_key)
-    weather = Weatherman(weather_api_key, location = a.location)
+    weather = Weatherman(weather_api_key, location = weather_location)
 
     topnews = reporter.get_top_headlines()
     current = weather.get_current_weather()
@@ -25,7 +30,7 @@ def home(request):
     icon = current['icon_url']
 
     current_data = {
-        "location": a.location,
+        "location": weather_location,
         "hi": hi,
         "lo": lo,
         "current": current_temp,
