@@ -1,4 +1,4 @@
-from reporter import Reporter
+from newsfeed.reporter.reporter import Reporter
 import pytest
 import time
 

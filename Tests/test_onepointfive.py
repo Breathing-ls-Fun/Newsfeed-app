@@ -1,3 +1,5 @@
+"""
+
 #import pytest
 
 #def test_addition():
@@ -10,15 +12,11 @@ from django.contrib import messages
 from newsfeed.reporter.reporter import Reporter
 from newsfeed.reporter.weatherman import Weatherman
 
-class User:
-    def __init__(self, location=None):
-        self.location = location
-        self.is_authenticated = False
 
 @pytest.fixture
 def authenticated_user():
     # Create a test user and authenticate them
-    user = User()
+    user = User.objects.create_user(username='testuser', password='testpassword')
     user.is_authenticated = True
     return user
 
@@ -26,8 +24,8 @@ def authenticated_user():
 def home(request):
     news_api_key = '0c53dab69d7a40d8baa66aec200e8d8d'
     weather_api_key = '33acb338cf186037e1f0801d8945e21b'
-    
-    if hasattr(request, 'user') and request.user.is_authenticated:
+
+    if request.user.is_authenticated:
         weather_location = request.user.location
     else:
         weather_location = 'New York'
@@ -68,8 +66,17 @@ def test_home_view_authenticated(authenticated_user):
     assert 'home.html' in response.content.decode()
 
 
-def test_category_view():
+def test_home_view_weather_location():
     request = {}
+    response = home(request)
+
+    assert isinstance(response, HttpResponse)
+    assert response.status_code == 200
+    assert 'home.html' in response.content.decode()
+
+
+def test_category_view():
+    request = {'category': 'sports'}
     response = category(request, 'sports')
 
     assert isinstance(response, HttpResponse)
@@ -79,9 +86,15 @@ def test_category_view():
 
 def test_reporter_instance():
     api_key = '0c53dab69d7a40d8baa66aec200e8d8d'
-    reporter = Reporter(api_key)
+    reporter = Reporter(api_key=api_key)
 
     assert isinstance(reporter, Reporter)
+    assert reporter.api_key == api_key
 
 
+def test_weatherman_instance():
+    api_key = '33acb338cf186037e1f0801d8945e21b'
+    location = 'New York'
+    weather = Weatherman(api_key=api_key, location=location)
 
+    """
