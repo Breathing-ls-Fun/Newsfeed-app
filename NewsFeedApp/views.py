@@ -7,7 +7,7 @@ from newsfeed.reporter.weatherman import Weatherman
 from test1.models import user_preferences
 
 def home(request):
-    news_api_key = '0c53dab69d7a40d8baa66aec200e8d8d'
+    news_api_key = '81448b5fe68c459d93a370eb7a9ce2aa'
     weather_api_key = '33acb338cf186037e1f0801d8945e21b'
     
 
