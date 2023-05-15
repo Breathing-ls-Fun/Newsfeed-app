@@ -162,7 +162,7 @@ label {
     line-height: 30px;
 }
 
-input[type="text"] {
+.location-input {
     width: 200px;
     margin-bottom: 25px;
     padding: 7px;
@@ -172,7 +172,7 @@ input[type="text"] {
     font-family: 'Inter', sans-serif;
 }
 
-button {
+.preferences-button {
   color: white;
   cursor: pointer;
   display: flex;
