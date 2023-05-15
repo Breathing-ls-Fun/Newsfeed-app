@@ -108,7 +108,7 @@ def preferences(request):
             a.pref_1 = category1
         if category2 is not None:
             a.pref_2 = category2
-        if category1 is not None:
+        if category3 is not None:
             a.pref_3 = category3
         a.save()
         print(a)
