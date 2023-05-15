@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_m5qqrmw*412t^s+03blp+szxor=i+@ur%5co8vhmssn#k&l3w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.228.21.15', '127.0.0.1']
+ALLOWED_HOSTS = ['54.144.214.122', '127.0.0.1']
 
 
 # Application definition
@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'NewsFeedApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nf_app_db',
+        'USER': 'admin',
+        'PASSWORD':'nfadmin123',
+        'HOST': 'nf-app-db.czladzj15lf6.us-east-1.rds.amazonaws.com',
+        'PORT': 3306,
     }
 }
 
@@ -127,3 +131,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')

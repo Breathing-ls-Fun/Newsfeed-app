@@ -13,7 +13,7 @@ class TestViews(TestCase):
         client = Client()
         response = client.get(reverse('registration'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'registration.html')
+        self.assertTemplateUsed(response, 'user/registration.html')
 
     def test_login(self):
         client = Client()
@@ -29,7 +29,7 @@ class TestViews(TestCase):
 
     def test_query(self):
         client = Client()
-        response = client.get(reverse('query'))
+        response = client.get(reverse('query') + 'query=knicks')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'user/query.html')
 

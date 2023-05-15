@@ -63,6 +63,7 @@
       resetDisabledOptionsStyle(category2Options);
       resetDisabledOptionsStyle(category3Options);
 
+      // Disable selected category1 in category2
       for (var i = 0; i < category2Options.length; i++) {
         if (category2Options[i].value === category1Value) {
           category2Options[i].disabled = true;
@@ -91,10 +92,6 @@
     }
   </script>
 {% endblock %}
-
-
-
-
 
 
   
