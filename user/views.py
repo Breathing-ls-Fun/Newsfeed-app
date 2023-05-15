@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from test1.models import user_preferences
+from newsfeed.reporter.reporter import Reporter
+
 
 
 def login(request):
@@ -50,7 +52,38 @@ def registration(request):
 
 
 def query(request):
-    return render(request,'user/query.html', {'title':'Search'})
+    api_key = 'd1232f6fd9ad400da947bf5a59963e10'
+    reporter = Reporter(api_key)
+    
+    query = request.GET['query']
+    topnews = reporter.search_articles(query)
+
+    latest = topnews['articles']
+    title = []
+    desc = []
+    url = []
+    author = []
+    date = []
+    image = []
+
+    for i in range(len(latest)):
+        news = latest[i]
+
+        title.append(news['title'])
+        desc.append(news['description'])
+        url.append(news['url'])
+        author.append(news['author'])
+        date.append(news['publishedAt'])
+        image.append(news['urlToImage'])
+
+    all_news = zip(title, desc, url, author, date, image)
+
+    context = {
+        'all_news': all_news,
+        'query': query
+    }
+
+    return render(request,'user/query.html', context)
 
 def logout(request):
     auth.logout(request)
