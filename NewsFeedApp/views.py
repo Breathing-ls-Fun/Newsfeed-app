@@ -7,7 +7,7 @@ from newsfeed.reporter.weatherman import Weatherman
 from test1.models import user_preferences
 
 def home(request):
-    news_api_key = '81448b5fe68c459d93a370eb7a9ce2aa'
+    news_api_key = '2b00a2eb951c41d8b52d443466b62903'
     weather_api_key = '33acb338cf186037e1f0801d8945e21b'
     
 
@@ -83,7 +83,7 @@ def home(request):
     return render(request, 'home.html', context)
 
 def category(request, category):
-    api_key = '0c53dab69d7a40d8baa66aec200e8d8d'
+    api_key = '6302cfd58afa4d2790c08edda25f837e'
     reporter = Reporter(api_key)
     topnews = reporter.get_top_headlines(category)
 
