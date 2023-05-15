@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<title>NewsFeed</title>
+<title>NewsFeed Search</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
@@ -11,38 +11,21 @@
 <link rel="stylesheet" href="{% static 'css/query.css' %}">
 	
 <div class="name">
-	<h2 id="news-heading">Search Query</h2>
+	<h2 id="news-heading">Search Query: "{{query}}"</h2>
 </div>
-<div class="container">
-	<div class="news-row">
-		<div class="col-md-4">
-			<div class="card" id="news-subheading">
-				<div class="card-body">
-					<h4 class="card-title">News 1</h4>
-					<p class="author-text">By Author McAuthorFace</p>
-					<p class="card-text"> Lorem ipsum dolor sit amet </p>
-				</div>
+
+<div class="news-container">
+	{% for title, description, url, author, date, image in all_news %}
+		<div class="news-column">
+			<div class="news-article">
+				<img class="article-image" src= "{{ image }}">
+				<a href="{{ url }}">
+					<h3 id="article-title">{{title}}</h3>
+				</a>
+				<p id="article-content">{{description}}</p>
 			</div>
 		</div>
-		<div class="col-md-4">
-			<div class="card" id="news-subheading">
-				<div class="card-body">
-					<h4 class="card-title">News 2</h4>
-					<p class="author-text">By Author McAuthorFace</p>
-					<p class="card-text"> Lorem ipsum dolor sit amet </p>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="card" id="news-subheading">
-				<div class="card-body">
-					<h4 class="card-title">News 3</h4>
-					<p class="author-text">By Author McAuthorFace</p>
-					<p class="card-text"> Lorem ipsum dolor sit amet </p>
-				</div>
-			</div>
-		</div>	  
-	</div>
+		{% endfor %}
 </div>
 {% endblock %}
         
