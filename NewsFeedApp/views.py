@@ -109,7 +109,8 @@ def category(request, category):
     all_news = zip(title, desc, url, author, date, image)
 
     context = {
-        'all_news': all_news
+        'all_news': all_news,
+        'category': category
     }
     
     return render(request, 'category.html', context)
