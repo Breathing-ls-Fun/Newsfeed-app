@@ -3,7 +3,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
+from test1.models import user_preferences
 from newsfeed.reporter.reporter import Reporter
+
 
 
 def login(request):
@@ -96,13 +98,20 @@ def preferences(request):
         category1 = request.POST.get('category1')
         category2 = request.POST.get('category2')
         category3 = request.POST.get('category3')
-
-        # Store the preferences in the user's session
-        request.session['location'] = location
-        request.session['category1'] = category1
-        request.session['category2'] = category2
-        request.session['category3'] = category3
-
+        try:
+            a = user_preferences.objects.get(user = request.user)
+        except:
+            a = user_preferences(user = request.user)
+        if location is not None:
+            a.location = location
+        if category1 is not None:
+            a.pref_1 = category1
+        if category2 is not None:
+            a.pref_2 = category2
+        if category1 is not None:
+            a.pref_3 = category3
+        a.save()
+        print(a)
         return redirect('home')  # Redirect to the desired page after storing preferences
     else:
         context = {
