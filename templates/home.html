@@ -11,7 +11,7 @@
 	<div class="weather-container">
 
 		<div class="current-weather-box">
-			<h2 id="forecast-font">Current Weather - Location: New York, NY</h2>
+			<h2 id="forecast-font">Current Weather - Location: {{current_data.location}}</h2>
 			<div class="icon">
 				<img class="current-weather-icon" src="{{current_data.icon}}">
 			</div>
@@ -26,7 +26,7 @@
 		</div>
 
 		<div class="forecast-weather-box">
-			<h2 id="forecast-font">5 Day Forecast - Location: New York, NY</h2>
+			<h2 id="forecast-font">5 Day Forecast - Location: {{current_data.location}}</h2>
 			<div class="week">
 				{% for weekly_date, weekly_hi, weekly_lo, weekly_status, weekly_icon in weekly_data %}
 				<div class="daily-forecast">
