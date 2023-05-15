@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from test1.models import user_preferences
 from newsfeed.reporter.reporter import Reporter
-
+from newsfeed.reporter.weatherman import Weatherman
 
 
 def login(request):
@@ -52,7 +52,7 @@ def registration(request):
 
 
 def query(request):
-    api_key = '0c53dab69d7a40d8baa66aec200e8d8d'
+    api_key = 'ac7ce57adbb5412bb3ee109895ec178a'
     reporter = Reporter(api_key)
     
     query = request.GET['query']
@@ -102,8 +102,13 @@ def preferences(request):
             a = user_preferences.objects.get(user = request.user)
         except:
             a = user_preferences(user = request.user)
-        if location is not None:
-            a.location = location
+        print(location)
+        if location.strip():
+            weather_api_key = '33acb338cf186037e1f0801d8945e21b'
+            test_weather = Weatherman(key=weather_api_key)
+            test_weather.update_location(location)
+            if test_weather.location == location:
+                a.location = location
         if category1 is not None:
             a.pref_1 = category1
         if category2 is not None:
