@@ -90,7 +90,7 @@ def logout(request):
     return redirect('/')
 
 def preferences(request):
-    user_categories = ['Sports', 'Tech', 'Art', 'Business', 'Health']  # Example list of categories
+    user_categories = ['sports', 'technology', 'entertainment', 'business', 'health', 'science']  # Example list of categories
 
     if request.method == 'POST':
         # Handle form submission and store preferences
