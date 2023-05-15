@@ -3,6 +3,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
+from test1.models import user_preferences
+from newsfeed.reporter.reporter import Reporter
+
 
 
 def login(request):
@@ -49,14 +52,45 @@ def registration(request):
 
 
 def query(request):
-    return render(request,'user/query.html', {'title':'Search'})
+    api_key = '0c53dab69d7a40d8baa66aec200e8d8d'
+    reporter = Reporter(api_key)
+    
+    query = request.GET['query']
+    topnews = reporter.search_articles(query)
+
+    latest = topnews['articles']
+    title = []
+    desc = []
+    url = []
+    author = []
+    date = []
+    image = []
+
+    for i in range(len(latest)):
+        news = latest[i]
+
+        title.append(news['title'])
+        desc.append(news['description'])
+        url.append(news['url'])
+        author.append(news['author'])
+        date.append(news['publishedAt'])
+        image.append(news['urlToImage'])
+
+    all_news = zip(title, desc, url, author, date, image)
+
+    context = {
+        'all_news': all_news,
+        'query': query
+    }
+
+    return render(request,'user/query.html', context)
 
 def logout(request):
     auth.logout(request)
     return redirect('/')
 
 def preferences(request):
-    user_categories = ['Sports', 'Tech', 'Art', 'Finance', 'Politics']  # Example list of categories
+    user_categories = ['sports', 'technology', 'entertainment', 'business', 'health', 'science']  # Example list of categories
 
     if request.method == 'POST':
         # Handle form submission and store preferences
@@ -64,13 +98,20 @@ def preferences(request):
         category1 = request.POST.get('category1')
         category2 = request.POST.get('category2')
         category3 = request.POST.get('category3')
-
-        # Store the preferences in the user's session
-        request.session['location'] = location
-        request.session['category1'] = category1
-        request.session['category2'] = category2
-        request.session['category3'] = category3
-
+        try:
+            a = user_preferences.objects.get(user = request.user)
+        except:
+            a = user_preferences(user = request.user)
+        if location is not None:
+            a.location = location
+        if category1 is not None:
+            a.pref_1 = category1
+        if category2 is not None:
+            a.pref_2 = category2
+        if category3 is not None:
+            a.pref_3 = category3
+        a.save()
+        print(a)
         return redirect('home')  # Redirect to the desired page after storing preferences
     else:
         context = {
