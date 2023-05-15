@@ -6,6 +6,14 @@
 <head>
 	<link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
+<style>
+	h2 {text-align: center;}
+</style>
+<title>{{category}} Articles</title>
+
+<div class="name">
+	<h2 id="news-heading">{{category}} Articles</h2>
+</div>
 
 	<div class="news-container">
 		{% for title, description, url, author, date, image in all_news %}

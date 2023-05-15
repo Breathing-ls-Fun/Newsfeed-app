@@ -17,53 +17,53 @@
     {% csrf_token %}
 
     <label for="location">Location:</label>
-    <input class="location-input" type="text" id="location" name="location" style="margin-right: 20px;">
+    <input type="text" id="location" name="location" style="margin-right: 20px;">
     <br>
     <label for="category1">Category 1:</label>
-<select id="category1" name="category1" class="input-field" style="margin-right: 20px;">
-  <option value="" disabled>Select Category</option>
-  {% for category in user_categories %}
-    <option value="{{ category }}" {% if request.session.category1 == category %} selected {% endif %}>{{ category }}</option>
-  {% endfor %}
-</select>
-<br>
-<label for="category2">Category 2:</label>
-<select id="category2" name="category2" class="input-field" style="margin-right: 20px;">
-  <option value="" disabled>Select Category</option>
-  {% for category in user_categories %}
-    <option value="{{ category }}" {% if request.session.category2 == category %} selected {% endif %} {% if request.session.category1 != category %} disabled {% endif %}>{{ category }}</option>
-  {% endfor %}
-</select>
-<br>
-<label for="category3">Category 3:</label>
-<select id="category3" name="category3" class="input-field" style="margin-right: 20px;">
-  <option value="" disabled>Select Category</option>
-  {% for category in user_categories %}
-    <option value="{{ category }}" {% if request.session.category3 == category %} selected {% endif %} {% if request.session.category1 != category and request.session.category2 != category %} disabled {% endif %}>{{ category }}</option>
-  {% endfor %}
-</select>
+    <select id="category1" name="category1" class="input-field" style="margin-right: 20px;">
+      <option value="" selected disabled>Select Category</option>
+      {% for category in user_categories %}
+        <option value="{{ category }}" {% if request.session.category1 == category %} selected {% endif %}>{{ category }}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label for="category2">Category 2:</label>
+    <select id="category2" name="category2" class="input-field" style="margin-right: 20px;">
+      <option value="" selected disabled>Select Category</option>
+      {% for category in user_categories %}
+        <option value="{{ category }}" {% if request.session.category2 == category %} selected {% endif %} {% if request.session.category1 != category %} disabled {% endif %}>{{ category }}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label for="category3">Category 3:</label>
+    <select id="category3" name="category3" class="input-field" style="margin-right: 20px;">
+      <option value="" selected disabled>Select Category</option>
+      {% for category in user_categories %}
+        <option value="{{ category }}" {% if request.session.category3 == category %} selected {% endif %} {% if request.session.category1 != category and request.session.category2 != category %} disabled {% endif %}>{{ category }}</option>
+      {% endfor %}
+    </select>
 
-    <button class="preferences-button" type="submit">Update</button>
+    <button type="submit">Update</button>
   </form>
 
   <script>
     var category1Select = document.getElementById('category1');
     var category2Select = document.getElementById('category2');
     var category3Select = document.getElementById('category3');
-  
+
     category1Select.addEventListener('change', handleCategoryChange);
     category2Select.addEventListener('change', handleCategoryChange);
-  
+
     function handleCategoryChange() {
       var category1Value = category1Select.value;
       var category2Options = category2Select.options;
       var category3Options = category3Select.options;
-  
+
       // Reset disabled options styling
       resetDisabledOptionsStyle(category2Options);
       resetDisabledOptionsStyle(category3Options);
-  
-      // Disable selected category1 in category2 options
+
+      // Disable selected category1 in category2
       for (var i = 0; i < category2Options.length; i++) {
         if (category2Options[i].value === category1Value) {
           category2Options[i].disabled = true;
@@ -71,7 +71,7 @@
           break;
         }
       }
-  
+
       // Disable selected category1 and category2 in category3 options
       for (var i = 0; i < category3Options.length; i++) {
         if (
@@ -83,7 +83,7 @@
         }
       }
     }
-  
+
     function resetDisabledOptionsStyle(options) {
       for (var i = 0; i < options.length; i++) {
         options[i].disabled = false;
@@ -91,6 +91,8 @@
       }
     }
   </script>
-  
-  
 {% endblock %}
+
+
+  
+

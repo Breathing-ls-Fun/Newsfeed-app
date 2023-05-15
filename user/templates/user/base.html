@@ -20,32 +20,26 @@
 	<body>
 		<nav>
             <div>
-                <ul class="list">
-                    {% if not request.user.is_authenticated %}
-                      {% if request.session.category1 %}
-                        <li class="categories"><a href="#">{{ request.session.category1 }}</a></li>
-                        <li class="categories"><a href="#">{{ request.session.category2 }}</a></li>
-                        <li class="categories"><a href="#">{{ request.session.category3 }}</a></li>
-                      {% else %}
-                        <li class="categories"><a href="/category/sports">Sports</a></li>
-                        <li class="categories"><a href="/category/technology">Tech</a></li>
-                        <li class="categories"><a href="/category/entertainment">Entertainment</a></li>
-                        <li class="categories"><a href="/category/business">Business</a></li>
-                        <li class="categories"><a href="/category/health">Health</a></li>
+              <ul class="list">
+                {% if request.user.is_authenticated %}
+                      {% if pref_1 %}
+                        <li class="categories"><a href="/category/{{ pref_1 }}">{{ pref_1 }}</a></li>
                       {% endif %}
-                    {% else %}
-                      {% if request.session.category1 %}
-                        <li class="categories"><a href="#">{{ request.session.category1 }}</a></li>
+                      {% if pref_2 %}
+                        <li class="categories"><a href="/category/{{ pref_2 }}">{{ pref_2 }}</a></li>
                       {% endif %}
-                      {% if request.session.category2 %}
-                        <li class="categories"><a href="#">{{ request.session.category2 }}</a></li>
+                      {% if pref_3 %}
+                        <li class="categories"><a href="/category/{{ pref_3 }}">{{ pref_3 }}</a></li>
                       {% endif %}
-                      {% if request.session.category3 %}
-                        <li class="categories"><a href="#">{{ request.session.category3 }}</a></li>
-                      {% endif %}
-                      <li class="categories"><a href="/user/preferences">Preferences</a></li>
-                    {% endif %}
-                  </ul>
+                  <li class="categories"><a href="/user/preferences">Preferences</a></li>
+                {% else %}
+                  <li class="categories"><a href="/category/sports">Sports</a></li>
+                  <li class="categories"><a href="/category/technology">Tech</a></li>
+                  <li class="categories"><a href="/category/entertainment">Entertainment</a></li>
+                  <li class="categories"><a href="/category/business">Business</a></li>
+                  <li class="categories"><a href="/category/health">Health</a></li>
+                {% endif %}
+              </ul>
             </div>
 			
 
