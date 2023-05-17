@@ -1,4 +1,4 @@
-from weatherman import Weatherman
+from newsfeed.reporter.weatherman import Weatherman
 import pytest
 import time
 
